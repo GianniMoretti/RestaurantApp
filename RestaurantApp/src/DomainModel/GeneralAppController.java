@@ -24,6 +24,6 @@ public class GeneralAppController {
 			if(ct.getTableID() == id)
 				return ct;
 		}
-		return new ComposedTable(-1); // TODO: da rivdere
+		return null; // TODO: da rivdere
 	}
 }
