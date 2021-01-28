@@ -16,4 +16,17 @@ public class TableServiceRecord {
 		this.phoneNumber=phoneNumber;
 		this.date=date;
 	}
+
+	public String getNominative() {
+		return nominative;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+	
 }
