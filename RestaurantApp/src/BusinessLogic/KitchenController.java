@@ -1,8 +1,11 @@
-package DomainModel;
+package BusinessLogic;
 import java.util.ArrayList;
 import java.util.Observable;
+import DomainModel.OrderRecord;
+import DomainModel.Order;
+import DomainModel.KindOfDish;
 
-public class KitchenController extends RestaurantPageController{
+public class KitchenController extends OrderPageController{
 
 	public KitchenController(Observable obs) {
 		obs.addObserver(this);

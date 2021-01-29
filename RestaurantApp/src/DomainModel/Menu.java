@@ -5,12 +5,11 @@ import java.util.ArrayList;
 // TODO: aggiungere un Singleton?
 
 public class Menu {
-	private ArrayList<Dish> dishes;
-	private ArrayList<Ingredient> ingredients;
+
+	private RepositoryMenu repo;
 	
 	public Menu(RepositoryMenu repositoryMenu){
-		this.dishes=repositoryMenu.getDishes();
-		this.ingredients=repositoryMenu.getIngredients();
+		this.repo = repositoryMenu;
 	}
 	
 	/*
@@ -20,14 +19,11 @@ public class Menu {
 	 // TODO: piatto passato come copia?
 
 	public ArrayList<Dish> getDishes() {
-		return dishes;
+		return repo.getDishes();
 	}
 
 	public ArrayList<Ingredient> getIngredients() {
-		return ingredients;
+		return repo.getIngredients();
 	}
-	
-	
-	
 	
 }
