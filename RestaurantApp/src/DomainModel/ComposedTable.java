@@ -8,6 +8,7 @@ public class ComposedTable {
 	private TableState tableState;
 
 	public ComposedTable(TableState tableState, int tableID) {
+		// TODO: tableID come assegnarlo
 		this.tableState = tableState;
 		this.tableID = tableID;
 	}

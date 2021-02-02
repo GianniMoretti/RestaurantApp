@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class TableService {
 	/*
-	 * TODO: prezzo del coperto: prendere da menù, fare una costante, creare una
+	 * TODO: prezzo del coperto: prendere da menï¿½, fare una costante, creare una
 	 * classe...
 	 */
 	private static final double SERVICE_PRICE = 1.5;
@@ -17,7 +17,7 @@ public class TableService {
 	public TableService(Waiter waiter, ComposedTable composedTable, int service) {
 		this.waiter = waiter;
 		this.composedTable = composedTable;
-		this.service = service;
+		this.service = service;//nÂ° coperti
 		this.orders = new ArrayList<Order>();
 	}
 	
