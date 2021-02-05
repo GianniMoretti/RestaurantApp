@@ -18,17 +18,8 @@ public class TableServiceMediator {
 		tableServices = new ArrayList<TableService>();
 	}
 
-	public void addTableService(TableService tableService, boolean send) {
-		boolean add=true;
-		for(TableService t:tableServices) {
-			if(t==tableService)
-				add=false;
-		}
-		if(add)
-			tableServices.add(tableService);
-		if(send)
-			orderManager.addOrder(tableService.getOrders().get(tableService.getOrders().size()-1));
-			// FIXME: verificare che venga inviato l'ultimo ordine aggiunto al tableService
+	public void addTableService(TableService tableService){
+		tableServices.add(tableService);
 	}
 
 	public TableService getTableService(int idTable) {
@@ -37,5 +28,13 @@ public class TableServiceMediator {
 				return t;
 		}
 		return null;
+	}
+	
+	public void placeOrderToTableService(Order order, int id) {
+		TableService ts= getTableService(id);
+		ts.addOrder(order);
+		if(!order.isWriteOff())
+			orderManager.addOrder(ts.getOrders().get(ts.getOrders().size()-1));
+			// FIXME: verificare che venga inviato l'ultimo ordine aggiunto al tableService
 	}
 }

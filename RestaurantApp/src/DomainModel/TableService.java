@@ -37,6 +37,10 @@ public class TableService {
 	public int getService() {
 		return service;
 	}
+	
+	public void setService(int service) {
+		this.service = service;
+	}
 
 	public ComposedTable getComposedTable() {
 		return composedTable;

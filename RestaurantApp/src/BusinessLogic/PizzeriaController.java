@@ -5,6 +5,8 @@ import DomainModel.OrderRecord;
 import DomainModel.Order;
 import DomainModel.KindOfDish;
 
+//Interfaccia aperta direttamente senza login se si clicca sul pulsante Pizzeria
+
 public class PizzeriaController extends OrderPageController{
 
 	public PizzeriaController(Observable obs) {

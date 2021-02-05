@@ -1,9 +1,12 @@
 package BusinessLogic;
 import java.util.ArrayList;
+
 import java.util.Observable;
 import DomainModel.OrderRecord;
 import DomainModel.Order;
 import DomainModel.KindOfDish;
+
+//Interfaccia aperta direttamente senza login se si clicca sul pulsante Bar
 
 public class BarController extends OrderPageController{
 

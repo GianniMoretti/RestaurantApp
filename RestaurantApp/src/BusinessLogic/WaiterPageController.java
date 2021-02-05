@@ -9,14 +9,12 @@ import DomainModel.Waiter;
 
 /*
  * login attraverso l'interfaccia prende l'ID e chiama il costruttore del WaiterPageController
- * possiede un TableService locale su cui lavora e lo cambia attraverso una richiesta al mediator
- * ogni volta che conferma l'ordine il mediator fa il collegamento con l'order manager
+ * Interagisce direttamente con il mediator per agire sui TableService
  */
 public class WaiterPageController {
 	private TableContainer tableContainer;
 	private TableServiceMediator tableServiceMediator;
 	private Waiter waiter;
-	private TableService tableService;
 
 	public WaiterPageController(TableContainer tc, TableServiceMediator tsm, int ID) {
 		this.tableContainer = tc;
@@ -26,23 +24,12 @@ public class WaiterPageController {
 
 	public void openTableService(int idTable, int service) {
 		ComposedTable ct = tableContainer.getTable(idTable);
-		this.tableService = new TableService(this.waiter, ct, service);
-	}
-	
-	public void addOrder(Order o) {
-		
-	}
-
-	public boolean modifyTableService(int idTable) {
-		// se ritorna false allora stampa un messaggio di errore sull'interfaccia
-		var tmp = tableServiceMediator.getTableService(idTable);
-		if (tmp == null)
-			return false;
-		this.tableService = tmp;
-		return true;
-	}
-	
-	public void confirmOrder() {
+		TableService tableService = new TableService(this.waiter, ct, service);
 		tableServiceMediator.addTableService(tableService);
 	}
+	
+	public void placeOrderToTableService(Order order, int id) {
+		tableServiceMediator.placeOrderToTableService(order, id);
+	}
+
 }

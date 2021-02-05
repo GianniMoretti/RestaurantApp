@@ -3,6 +3,7 @@ package DomainModel;
 import java.util.ArrayList;
 
 // TODO: aggiungere un Singleton?
+// TODO: creato la momento del login del camerire?
 
 public class Menu {
 
