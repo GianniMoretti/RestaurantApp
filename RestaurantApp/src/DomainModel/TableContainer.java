@@ -26,10 +26,24 @@ public class TableContainer {
 		return null; // TODO: da rivdere
 	}
 	
-	public void deleteTable(int id) {
+	public boolean deleteTable(int id) {
 		for(ComposedTable ct : tables) {
-			if(ct.getTableID() == id)
+			if(ct.getTableID() == id) {
+				ct.resetPhisicalTable();
 				tables.remove(ct);
+				return true;
+			}				
 		}
+		return false;
+	}
+	
+	public boolean setComposedTableAvailable(int id) {
+		for(ComposedTable ct : tables) {
+			if(ct.getTableID() == id) {
+				ct.setTableState(TableState.AVAILABLE);
+				return true;
+			}				
+		}
+		return false;
 	}
 }

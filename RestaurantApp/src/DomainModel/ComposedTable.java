@@ -35,4 +35,9 @@ public class ComposedTable {
 		this.tableState = tableState;
 	}
 
+	public void resetPhisicalTable() {
+		for(PhisicalTable t : tables) {
+			t.setAvailable(true);
+		}
+	}
 }
