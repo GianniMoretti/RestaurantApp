@@ -15,7 +15,7 @@ public class Menu {
 	
 	/*
 	 * Pigiando pulsante che rappresenta piatto nel menu
-	 * ritorna il this del piatto per poterlo inserire nell'OrderRecord  
+	 * ritorna il this del piatto per poterlo inserire nell'OrderRecord
 	 */
 
 	public void refresh() {
