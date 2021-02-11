@@ -2,29 +2,32 @@ package DomainModel;
 
 import java.util.ArrayList;
 
-// TODO: aggiungere un Singleton?
-// TODO: creato la momento del login del camerire?
-
 public class Menu {
-
-	private RepositoryMenu repo;
+	
+	private RepositoryMenu repositoryMenu;
+	private ArrayList<Dish> dishes;
+	private ArrayList<Ingredient> ingredients;
 	
 	public Menu(RepositoryMenu repositoryMenu){
-		this.repo = repositoryMenu;
+		this.repositoryMenu=repositoryMenu;
+		refresh();
 	}
 	
 	/*
 	 * Pigiando pulsante che rappresenta piatto nel menu
 	 * ritorna il this del piatto per poterlo inserire nell'OrderRecord  
 	 */
-	 // TODO: piatto passato come copia?
+
+	public void refresh() {
+		this.dishes=repositoryMenu.getDishes();
+		this.ingredients=repositoryMenu.getIngredients();
+	}
 
 	public ArrayList<Dish> getDishes() {
-		return repo.getDishes();
+		return dishes;
 	}
 
 	public ArrayList<Ingredient> getIngredients() {
-		return repo.getIngredients();
+		return ingredients;
 	}
-	
 }

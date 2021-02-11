@@ -37,4 +37,8 @@ public class TableServiceMediator {
 			orderManager.addOrder(ts.getOrders().get(ts.getOrders().size()-1));
 			// FIXME: verificare che venga inviato l'ultimo ordine aggiunto al tableService
 	}
+
+	public boolean removeTableService(TableService ts) {
+		return tableServices.remove(ts);
+	}
 }
