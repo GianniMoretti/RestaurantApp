@@ -20,9 +20,9 @@ public class HallOrganizatorPageController {
 	private ArrayList<PhisicalTable> tables;
 	private TableContainer tableContainer;
 	
-	public HallOrganizatorPageController(ArrayList<PhisicalTable> tables, TableContainer tc) {
+	public HallOrganizatorPageController(ArrayList<PhisicalTable> tables) {
 		this.tables = tables;
-		this.tableContainer = tc;
+		this.tableContainer = TableContainer.getInstance();
 	}
 	
 	//TODO: Creare l'id potrebbe dare problemi, cosa si può fare?

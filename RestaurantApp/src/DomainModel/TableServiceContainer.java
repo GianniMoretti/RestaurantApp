@@ -9,13 +9,22 @@ import java.util.ArrayList;
  * NB: controlla il send in addTableService
  */
 
-public class TableServiceMediator {
+public class TableServiceContainer {
 	private ArrayList<TableService> tableServices;
 	private OrderManager orderManager;
+	private static TableServiceContainer instance= null;
 
-	public TableServiceMediator(OrderManager orderManager) {
-		this.orderManager = orderManager;
+	private TableServiceContainer() {
+		this.orderManager = OrderManager.getInstance();
 		tableServices = new ArrayList<TableService>();
+	}
+	
+	// Singleton
+	public static TableServiceContainer getInstance(){
+		if(instance==null) {
+			instance= new TableServiceContainer();
+		}
+		return instance;
 	}
 
 	public void addTableService(TableService tableService){

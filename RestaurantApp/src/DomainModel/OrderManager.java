@@ -2,13 +2,21 @@ package DomainModel;
 import java.util.ArrayList;
 import java.util.Observable;
 
-//TODO: is this a singleton pattern?
 public class OrderManager extends Observable {
 	
 	private ArrayList<Order> orders; 
+	private static OrderManager instance=null;
 	
-	public OrderManager() {
+	private OrderManager() {
 		orders = new ArrayList<Order> ();
+	}
+	
+	// Singleton
+	public static OrderManager getInstance() {
+		if(instance==null) {
+			instance= new OrderManager();
+		}
+		return instance;
 	}
 	
     public void addOrder(Order order) {
@@ -16,4 +24,5 @@ public class OrderManager extends Observable {
     	setChanged();
     	notifyObservers(order);
     }
+   
 }

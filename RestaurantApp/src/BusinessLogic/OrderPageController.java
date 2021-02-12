@@ -9,7 +9,7 @@ import DomainModel.KindOfDish;
 public abstract class OrderPageController implements Observer{
 
 	//TODO: va bene protected?
-	//Perchè lo abbiamo fatto?
+	//Perchè lo abbiamo fatto? -> più facile aggiungere altri controller
 	protected ArrayList<OrderRecord> orderRecords;
 	
 	@Override
@@ -19,5 +19,10 @@ public abstract class OrderPageController implements Observer{
 	}
 	
 	public abstract void getOrder(Order order);
+	
+	// chiamato al logout o alla chiusura dell'applicativo
+	public void detach(Observable obs) {
+		obs.deleteObserver(this);
+	}
 }
 

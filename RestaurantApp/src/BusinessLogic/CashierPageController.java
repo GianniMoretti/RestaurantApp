@@ -2,24 +2,24 @@ package BusinessLogic;
 
 import DomainModel.RepositoryTableRecord;
 import DomainModel.TableService;
-import DomainModel.TableServiceMediator;
+import DomainModel.TableServiceContainer;
 import DomainModel.TableState;
 
 public class CashierPageController {
-	private TableServiceMediator tableServiceMediator;
+	private TableServiceContainer tableServiceContainer;
 	private RepositoryTableRecord repository;
 	
-	public CashierPageController(TableServiceMediator tableServiceMediator, RepositoryTableRecord repository) {
-		this.tableServiceMediator = tableServiceMediator;
+	public CashierPageController(RepositoryTableRecord repository) {
+		this.tableServiceContainer = TableServiceContainer.getInstance();
 		this.repository = repository;
 	}
 	
 	public double getBill(int id) {
 		// TODO: TBD fare bene unit test !!!
-		TableService ts = tableServiceMediator.getTableService(id);
+		TableService ts = tableServiceContainer.getTableService(id);
 		if(ts==null)
 			return -1;
-		tableServiceMediator.removeTableService(ts);
+		tableServiceContainer.removeTableService(ts);
 		repository.addRecord(ts.getTableServiceRecord());
 		ts.getComposedTable().setTableState(TableState.DIRTY);
 		return ts.getBill();

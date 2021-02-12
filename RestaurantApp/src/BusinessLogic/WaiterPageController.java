@@ -4,7 +4,7 @@ import DomainModel.ComposedTable;
 import DomainModel.Order;
 import DomainModel.TableContainer;
 import DomainModel.TableService;
-import DomainModel.TableServiceMediator;
+import DomainModel.TableServiceContainer;
 import DomainModel.TableState;
 import DomainModel.Waiter;
 
@@ -14,12 +14,12 @@ import DomainModel.Waiter;
  */
 public class WaiterPageController {
 	private TableContainer tableContainer;
-	private TableServiceMediator tableServiceMediator;
+	private TableServiceContainer tableServiceContainer;
 	private Waiter waiter;
 
-	public WaiterPageController(TableContainer tc, TableServiceMediator tsm, int ID) {
-		this.tableContainer = tc;
-		this.tableServiceMediator = tsm;
+	public WaiterPageController(int ID) {
+		this.tableContainer = TableContainer.getInstance();
+		this.tableServiceContainer = TableServiceContainer.getInstance();
 		this.waiter = new Waiter(ID);
 	}
 
@@ -28,14 +28,14 @@ public class WaiterPageController {
 		if(ct.getTableState() == TableState.AVAILABLE) {
 			ct.setTableState(TableState.UNAVAILABLE);
 			TableService tableService = new TableService(this.waiter, ct, service);
-			tableServiceMediator.addTableService(tableService);
+			tableServiceContainer.addTableService(tableService);
 			return true;
 		}
 		return false;
 	}
 	
 	public void placeOrderToTableService(Order order, int id) {
-		tableServiceMediator.placeOrderToTableService(order, id);
+		tableServiceContainer.placeOrderToTableService(order, id);
 	}
 
 }

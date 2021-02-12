@@ -8,10 +8,18 @@ public class TableContainer {
 	 * L'hall organizator gestisce creazione e distruzione dei tavoli
 	 */
 
+	private static TableContainer instance=null;
 	private ArrayList<ComposedTable> tables;
 	
-	public TableContainer() {
+	private TableContainer() {
 		tables = new ArrayList<ComposedTable>();
+	}
+	
+	// Singleton
+	public static TableContainer getInstance() {
+		if(instance==null)
+			instance= new TableContainer();
+		return instance;
 	}
 	
 	public void addTable(ComposedTable table) {

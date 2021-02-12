@@ -10,7 +10,7 @@ import DomainModel.KindOfDish;
 
 public class KitchenController extends OrderPageController{
 
-	public KitchenController(Observable obs) {
+	public KitchenController(Observable obs) {    // OrderManager.getInstance()
 		obs.addObserver(this);
 		orderRecords = new ArrayList<OrderRecord>();
 	}
