@@ -26,12 +26,12 @@ public class TableContainer {
 		tables.add(table);
     }
 	
-	public ComposedTable getTable(int id) {
+	public ComposedTable getTable(int id) throws IndexOutOfBoundsException {
 		for(ComposedTable ct : tables) {
 			if(ct.getTableID() == id)
 				return ct;
 		}
-		return null; // TODO: da rivdere
+		throw new IndexOutOfBoundsException();
 	}
 	
 	public boolean deleteTable(int id) {

@@ -24,16 +24,20 @@ public class WaiterPageController {
 	}
 
 	public boolean openTableService(int idTable, int service) {
-		ComposedTable ct = tableContainer.getTable(idTable);
-		if(ct.getTableState() == TableState.AVAILABLE) {
-			ct.setTableState(TableState.UNAVAILABLE);
-			TableService tableService = new TableService(this.waiter, ct, service);
-			tableServiceContainer.addTableService(tableService);
-			return true;
+		try {
+			ComposedTable ct = tableContainer.getTable(idTable);
+			if (ct.getTableState() == TableState.AVAILABLE) {
+				ct.setTableState(TableState.UNAVAILABLE);
+				TableService tableService = new TableService(this.waiter, ct, service);
+				tableServiceContainer.addTableService(tableService);
+				return true;
+			}
+			return false;
+		} catch (IndexOutOfBoundsException e) {
+			return false;
 		}
-		return false;
 	}
-	
+
 	public void placeOrderToTableService(Order order, int id) {
 		tableServiceContainer.placeOrderToTableService(order, id);
 	}

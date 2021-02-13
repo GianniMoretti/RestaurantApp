@@ -31,12 +31,12 @@ public class TableServiceContainer {
 		tableServices.add(tableService);
 	}
 
-	public TableService getTableService(int idTable) {
+	public TableService getTableService(int idTable) throws IndexOutOfBoundsException {
 		for (TableService t : tableServices) {
 			if (t.getComposedTable().getTableID() == idTable)
 				return t;
 		}
-		return null;
+		throw new IndexOutOfBoundsException();
 	}
 	
 	public void placeOrderToTableService(Order order, int id) {
