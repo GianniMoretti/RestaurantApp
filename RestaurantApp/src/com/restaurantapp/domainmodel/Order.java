@@ -29,15 +29,6 @@ public class Order {
 		records.add(orderRecord);
 	}
 	
-	public void removeOrderRecord(OrderRecord orderRecord) {
-		records.remove(orderRecord);
-	}
-	
-	public void modifyOrderRecord(OrderRecord oldOR, OrderRecord newOR) {
-		removeOrderRecord(oldOR);
-		addOrderRecord(newOR);
-	}
-	
 	public double getTotal() {
 		double total=0;
 		for(OrderRecord record:records) {
