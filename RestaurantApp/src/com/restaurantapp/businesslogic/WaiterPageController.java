@@ -38,8 +38,8 @@ public class WaiterPageController {
 		}
 	}
 
-	public void placeOrderToTableService(Order order, int id) {
-		tableServiceContainer.placeOrderToTableService(order, id);
+	public boolean placeOrderToTableService(Order order, int id) {
+		return tableServiceContainer.placeOrderToTableService(order, id);
 	}
 
 }

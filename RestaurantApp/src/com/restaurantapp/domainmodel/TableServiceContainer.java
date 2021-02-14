@@ -39,12 +39,18 @@ public class TableServiceContainer {
 		throw new IndexOutOfBoundsException();
 	}
 	
-	public void placeOrderToTableService(Order order, int id) {
-		TableService ts= getTableService(id);
-		ts.addOrder(order);
-		if(!order.isWriteOff())
-			orderManager.addOrder(ts.getOrders().get(ts.getOrders().size()-1));
-			// FIXME: verificare che venga inviato l'ultimo ordine aggiunto al tableService
+	public boolean placeOrderToTableService(Order order, int id) {
+		try {
+			TableService ts = getTableService(id);
+			ts.addOrder(order);
+			if(!order.isWriteOff())
+				orderManager.addOrder(ts.getOrders().get(ts.getOrders().size()-1));
+			return true;
+				// FIXME: verificare che venga inviato l'ultimo ordine aggiunto al tableService
+		} catch (IndexOutOfBoundsException e) {
+			return false;
+		}
+		
 	}
 
 	public boolean removeTableService(TableService ts) {

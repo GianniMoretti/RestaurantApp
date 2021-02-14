@@ -2,19 +2,19 @@ package com.restaurantapp.businesslogic;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
-
-//import com.restaurantapp.domainmodel.ComposedTable;
-//import com.restaurantapp.domainmodel.FakeMenuData;
-//import com.restaurantapp.domainmodel.Menu;
-//import com.restaurantapp.domainmodel.PhisicalTable;
-//import com.restaurantapp.domainmodel.RepositoryMenu;
-//import com.restaurantapp.domainmodel.TableContainer;
-import com.restaurantapp.domainmodel.*;
-
-
-
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
+
+import com.restaurantapp.domainmodel.ComposedTable;
+import com.restaurantapp.domainmodel.Dish;
+import com.restaurantapp.domainmodel.FakeMenuData;
+import com.restaurantapp.domainmodel.Menu;
+import com.restaurantapp.domainmodel.Order;
+import com.restaurantapp.domainmodel.OrderRecord;
+import com.restaurantapp.domainmodel.PhisicalTable;
+import com.restaurantapp.domainmodel.TableContainer;
+import com.restaurantapp.domainmodel.TableServiceContainer;
+
 
 class WaiterPageControllerTest {
 	
@@ -72,12 +72,9 @@ class WaiterPageControllerTest {
 		 
 		 order.addOrderRecord(orderRecord);
 		 WPC.openTableService(60, 3);
-		 WPC.placeOrderToTableService(order, 60);
-		 
-		 TableServiceContainer tsc = TableServiceContainer.getInstance();
-		 int size = tsc.getTableService(60).getOrders().size();
-		 
-		 assertEquals(1, size,"Order placed");
+		 	 
+		 assertEquals(true, WPC.placeOrderToTableService(order, 60),"Order placed");
+		 assertEquals(false, WPC.placeOrderToTableService(order, 20),"Order placed");
 	}
 	
 }
