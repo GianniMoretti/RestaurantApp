@@ -14,6 +14,7 @@ import com.restaurantapp.domainmodel.OrderRecord;
 import com.restaurantapp.domainmodel.PhisicalTable;
 import com.restaurantapp.domainmodel.TableContainer;
 import com.restaurantapp.domainmodel.TableServiceContainer;
+import com.restaurantapp.domainmodel.TableState;
 
 
 class WaiterPageControllerTest {
@@ -27,6 +28,7 @@ class WaiterPageControllerTest {
 		PhisicalTable pt3 = new PhisicalTable(3);
 		
 		PhisicalTable pt5 = new PhisicalTable(5);
+		PhisicalTable pt6 = new PhisicalTable(6);
 		
         ComposedTable ct = new ComposedTable(40);
         ct.addTable(pt1);
@@ -35,9 +37,14 @@ class WaiterPageControllerTest {
         ComposedTable ct1 = new ComposedTable(60);
         ct1.addTable(pt5);
         
+        ComposedTable ct2 = new ComposedTable(70);
+        ct2.addTable(pt6);
+        ct2.setTableState(TableState.UNUSABLE);
+        
         TableContainer tc = TableContainer.getInstance();
         tc.addTable(ct);
         tc.addTable(ct1);
+        tc.addTable(ct2);
         
         WPC = new WaiterPageController(7010270);
         
@@ -45,21 +52,22 @@ class WaiterPageControllerTest {
     }
 	
 	@Test
-	@DisplayName("Open table service")
+	@DisplayName("Ensures that table service opening takes place correctly")
 	void testOpenTableService() {		
-		assertEquals(true, WPC.openTableService(40, 6) ,"Table service created");
-		assertEquals(false, WPC.openTableService(40, 6) ,"Table not available");
-		assertEquals(false, WPC.openTableService(16, 4) ,"Table not found");		
+		assertTrue(WPC.openTableService(40, 6), "Table service created");
+		assertFalse(WPC.openTableService(40, 6) ,"Table not available");
+		assertFalse(WPC.openTableService(16, 4) ,"Table not found");
+		assertFalse(WPC.openTableService(60, 4) ,"Table unusable");
 	}
 
 	@Test
-	@DisplayName("Place order to table service") 
+	@DisplayName("Placing an order to table service should work") 
 	void testPlaceOrderToTableService() {
 		
 		 Order order = new Order();
 		 
 		 Dish dish = menu.getDishes().get(0);
-		 //Ingredient ingredient = menu.getIngredients().get(1); //FIXME: Non Ã¨ presente
+		 //Ingredient ingredient = menu.getIngredients().get(1); //FIXME: Non è presente
 		 
 		 OrderRecord orderRecord = new OrderRecord(dish);
 		 orderRecord.setComment("impasto integrale");
@@ -73,8 +81,7 @@ class WaiterPageControllerTest {
 		 order.addOrderRecord(orderRecord);
 		 WPC.openTableService(60, 3);
 		 	 
-		 assertEquals(true, WPC.placeOrderToTableService(order, 60),"Order placed");
-		 assertEquals(false, WPC.placeOrderToTableService(order, 20),"Order placed");
+		 assertTrue(WPC.placeOrderToTableService(order, 60),"Order placed");
+		 assertFalse(WPC.placeOrderToTableService(order, 20),"Order placed");
 	}
-	
 }

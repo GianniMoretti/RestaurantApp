@@ -60,7 +60,7 @@ public class FakeMenuData implements RepositoryMenu {
 		ingredients.put(i.getName(), i);
 		i= new Ingredient("Gelato al Cioccolato", 1.5);
 		ingredients.put(i.getName(), i);
-		i= new Ingredient("Prosciutto Crudo", 2);
+		i= new Ingredient("Prosciutto Crudo", 2.5);
 		ingredients.put(i.getName(), i);
 	}
 	
@@ -76,7 +76,7 @@ public class FakeMenuData implements RepositoryMenu {
 		d.addIngredient(ingredients.get("Pomodoro"));
 		dishes.add(d);
 		
-		d= new Dish("Sarsiccie ai ferri", 14, KindOfDish.SECOND_COURSE);
+		d= new Dish("Salsicce ai ferri", 14, KindOfDish.SECOND_COURSE);
 		d.addIngredient(ingredients.get("Salsiccia"));
 		dishes.add(d);
 		

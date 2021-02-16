@@ -17,7 +17,7 @@ public class TableService {
 	public TableService(Waiter waiter, ComposedTable composedTable, int service) {
 		this.waiter = waiter;
 		this.composedTable = composedTable;
-		this.service = service;//nÂ° coperti
+		this.service = service;//n° coperti
 		this.orders = new ArrayList<Order>();
 	}
 	
