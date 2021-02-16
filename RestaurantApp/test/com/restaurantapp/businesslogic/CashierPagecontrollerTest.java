@@ -2,10 +2,10 @@ package com.restaurantapp.businesslogic;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -17,7 +17,6 @@ import com.restaurantapp.domainmodel.Menu;
 import com.restaurantapp.domainmodel.Order;
 import com.restaurantapp.domainmodel.OrderRecord;
 import com.restaurantapp.domainmodel.PhisicalTable;
-import com.restaurantapp.domainmodel.RepositoryMenu;
 import com.restaurantapp.domainmodel.RepositoryTableRecord;
 import com.restaurantapp.domainmodel.TableContainer;
 import com.restaurantapp.domainmodel.TableService;
@@ -30,6 +29,7 @@ class CashierPagecontrollerTest {
 
 	private static CashierPageController CPC;
 	private static RepositoryTableRecord repository;
+	private static ArrayList<TableServiceRecord> records;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -52,9 +52,15 @@ class CashierPagecontrollerTest {
 		tc.addTable(ct2);
 
 		TableService ts1 = new TableService(new Waiter(7015028), ct1, 4);
-		ts1.setTableServiceRecord(new TableServiceRecord("Francesco", "123456789", new Date()));
+		TableServiceRecord record1 = new TableServiceRecord("Francesco", "123456789", new Date());
+		ts1.setTableServiceRecord(record1);
 		TableService ts2 = new TableService(new Waiter(7010270), ct2, 3);
-		ts2.setTableServiceRecord(new TableServiceRecord("Gianni", "987654321", new Date()));
+		TableServiceRecord record2 = new TableServiceRecord("Gianni", "987654321", new Date());
+		ts2.setTableServiceRecord(record2);
+		
+		records = new ArrayList<>();
+		records.add(record1);
+		records.add(record2);
 
 		TableServiceContainer tsc = TableServiceContainer.getInstance();
 		tsc.addTableService(ts1);
@@ -119,10 +125,6 @@ class CashierPagecontrollerTest {
 
 	}
 
-	/*@BeforeEach
-	void setUp() throws Exception {
-	}*/
-
 	@Test
 	@DisplayName("getBill should return the exact price")
 	void testGetBill() {
@@ -130,8 +132,7 @@ class CashierPagecontrollerTest {
 		assertEquals(25.5, CPC.getBill(60), "Bill with write off");
 		assertEquals(TableState.DIRTY, TableContainer.getInstance().getTable(40).getTableState(), "Assert table state");
 		assertEquals(TableState.DIRTY, TableContainer.getInstance().getTable(60).getTableState(), "Assert table state");
-		//assertEquals();
-		
+		assertTrue(records.equals(repository.getRecords(new Date())), "check saved records");
 	}
 	
 }

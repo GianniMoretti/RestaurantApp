@@ -1,5 +1,6 @@
 package com.restaurantapp.domainmodel;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -20,7 +21,7 @@ public class FakeTableRecord implements RepositoryTableRecord{
 	public ArrayList<TableServiceRecord> getRecords(Date date) {
 		ArrayList<TableServiceRecord> tmp= new ArrayList<TableServiceRecord>();
 		for(TableServiceRecord record: records) {
-			if(record.getDate()==date)
+			if(new SimpleDateFormat("MM-dd-yyyy").format(record.getDate())==new SimpleDateFormat("MM-dd-yyyy").format(date))
 				tmp.add(record);	
 		}
 		return tmp;
@@ -30,7 +31,7 @@ public class FakeTableRecord implements RepositoryTableRecord{
 	public boolean deleteRecords(Date date) {
 		ArrayList<TableServiceRecord> tmp= new ArrayList<TableServiceRecord>();
 		for(TableServiceRecord record: records) {
-			if(record.getDate()==date){
+			if(new SimpleDateFormat("MM-dd-yyyy").format(record.getDate())==new SimpleDateFormat("MM-dd-yyyy").format(date)){
 				tmp.add(record);
 			}
 		}

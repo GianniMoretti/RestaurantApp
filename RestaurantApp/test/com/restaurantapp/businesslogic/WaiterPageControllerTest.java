@@ -23,7 +23,7 @@ class WaiterPageControllerTest {
 	private static Menu menu;
 
 	@BeforeAll                                         
-    public static void setUp(){
+    static void setUpBeforeClass(){
 		PhisicalTable pt1 = new PhisicalTable(1);
 		PhisicalTable pt3 = new PhisicalTable(3);
 		
