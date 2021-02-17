@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -133,4 +134,9 @@ class CashierPagecontrollerTest {
 		assertEquals(2, repository.getRecords(LocalDate.now()).size(), "check saved records");
 	}
 	
+	@AfterAll
+	static void cleanUp() {
+		TableContainer.getInstance().deleteTable(40);
+		TableContainer.getInstance().deleteTable(60);
+	}
 }

@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -17,6 +18,7 @@ import com.restaurantapp.domainmodel.OrderManager;
 import com.restaurantapp.domainmodel.OrderRecord;
 import com.restaurantapp.domainmodel.PhisicalTable;
 import com.restaurantapp.domainmodel.TableContainer;
+import com.restaurantapp.domainmodel.TableServiceRecord;
 
 class OrderPageControllerTest {
 
@@ -24,8 +26,6 @@ class OrderPageControllerTest {
 	private static BarController BC;
 	private static PizzeriaController PC;
 	private static Menu menu;
-	private static WaiterPageController WPC;
-	private static Order order;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -42,7 +42,7 @@ class OrderPageControllerTest {
 
 		menu = new Menu(new FakeMenuData());
 
-		order = new Order();
+		Order order = new Order();
 
 		for (Dish d : menu.getDishes()) {
 			OrderRecord or = new OrderRecord(d);
@@ -53,16 +53,15 @@ class OrderPageControllerTest {
 		BC = new BarController(OrderManager.getInstance());
 		PC = new PizzeriaController(OrderManager.getInstance());
 
-		WPC = new WaiterPageController(7015028);
+		WaiterPageController WPC = new WaiterPageController(7015028);
 
-		
+		WPC.openTableService(40, 4, new TableServiceRecord("Francesco", "123456789"));
+		WPC.placeOrderToTableService(order, 40);
 	}
 
 	@Test
 	@DisplayName("Observer should work")
 	void test() {
-		WPC.placeOrderToTableService(order, 40);
-		
 		ArrayList<OrderRecord> kitchen = new ArrayList<>();
 		for (int i = 0; i < 4; i++)
 			kitchen.add(new OrderRecord(menu.getDishes().get(i)));
@@ -73,19 +72,23 @@ class OrderPageControllerTest {
 		ArrayList<OrderRecord> bar = new ArrayList<>();
 		for (int i = 5; i < 8; i++)
 			bar.add(new OrderRecord(menu.getDishes().get(i)));
-		
-		assertFalse(KC.getRecords().isEmpty(),"kitchen records is not empty");
+
+		assertEquals(4, KC.getRecords().size(), "kitchen records is of the right size");
 		KC.getRecords().retainAll(kitchen);
-		assertTrue(KC.getRecords().isEmpty(),"check kitchen records");
-		
-		assertFalse(PC.getRecords().isEmpty(),"pizzeria records is not empty");
+		assertTrue(KC.getRecords().isEmpty(), "check kitchen records");
+
+		assertEquals(1, PC.getRecords().size(), "pizzeria records is of the right size");
 		PC.getRecords().retainAll(pizzeria);
-		assertTrue(PC.getRecords().isEmpty(),"check pizzeria records");
-		
-		assertFalse(BC.getRecords().isEmpty(),"bar records is not empty");
+		assertTrue(PC.getRecords().isEmpty(), "check pizzeria records");
+
+		assertEquals(3, BC.getRecords().size(), "bar records is of the right size");
 		BC.getRecords().retainAll(bar);
-		assertTrue(BC.getRecords().isEmpty(),"check bar records");
+		assertTrue(BC.getRecords().isEmpty(), "check bar records");
 
 	}
-
+	
+	@AfterAll
+	static void cleanUp() {
+		TableContainer.getInstance().deleteTable(40);
+	}
 }

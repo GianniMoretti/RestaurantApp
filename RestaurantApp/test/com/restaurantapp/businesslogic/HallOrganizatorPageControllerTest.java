@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -68,4 +69,5 @@ class HallOrganizatorPageControllerTest {
 		assertEquals(TableState.AVAILABLE, ct.getTableState(),"check the effectice state of composed table");
 		assertFalse(HOPC.setComposedTableAvailable(50),"set non-existest composed table available");
 	}
+	
 }

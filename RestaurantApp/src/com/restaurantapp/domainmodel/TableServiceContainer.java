@@ -43,9 +43,7 @@ public class TableServiceContainer {
 		try {
 			TableService ts = getTableService(id);
 			ts.addOrder(order);
-			System.out.println(order.isWriteOff());
 			if(!order.isWriteOff())
-				System.out.println("ciao");
 				orderManager.addOrder(ts.getOrders().get(ts.getOrders().size()-1));
 			return true;
 				// FIXME: verificare che venga inviato l'ultimo ordine aggiunto al tableService

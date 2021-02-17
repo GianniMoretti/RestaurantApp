@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -48,5 +49,5 @@ class RestaurantManagerPageControllerTest {
 		assertTrue(tmp.equals(RMPC.getTableServiceRecords(LocalDate.now())), "check if the record list is empty");
 		assertFalse(RMPC.deleteTableServiceRecords(LocalDate.now()), "no data to delete");
 	}
-
+	
 }

@@ -1,6 +1,8 @@
 package com.restaurantapp.businesslogic;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
@@ -55,7 +57,6 @@ class WaiterPageControllerTest {
 	@DisplayName("Ensures that table service opening takes place correctly")
 	void testOpenTableService() {		
 		assertTrue(WPC.openTableService(40, 6, new TableServiceRecord("Francesco", "7015028")), "Table service created");
-		//assertTrue(WPC.openTableService(idTable, service))
 		assertFalse(WPC.openTableService(40, 6, new TableServiceRecord("Francesco", "7015028")) ,"Table not available");
 		assertFalse(WPC.openTableService(16, 4, new TableServiceRecord("Francesco", "7015028")) ,"Table not found");
 		assertFalse(WPC.openTableService(70, 4, new TableServiceRecord("Francesco", "7015028")) ,"Table unusable");
@@ -84,5 +85,12 @@ class WaiterPageControllerTest {
 		 	 
 		 assertTrue(WPC.placeOrderToTableService(order, 60),"Order placed");
 		 assertFalse(WPC.placeOrderToTableService(order, 20),"Order placed");
+	}
+	
+	@AfterAll
+	static void cleanUp() {
+		TableContainer.getInstance().deleteTable(40);
+		TableContainer.getInstance().deleteTable(60);
+		TableContainer.getInstance().deleteTable(70);
 	}
 }
