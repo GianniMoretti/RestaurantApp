@@ -1,7 +1,7 @@
 package com.restaurantapp.businesslogic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 
 import com.restaurantapp.domainmodel.Dish;
 import com.restaurantapp.domainmodel.Ingredient;
@@ -17,18 +17,17 @@ public class RestaurantManagerPageController {
 	private RepositoryMenu repositoryMenu;
 	private RepositoryTableRecord repositoryTableRecord;
 
-	public RestaurantManagerPageController(String id, RepositoryMenu repositoryMenu,
-			RepositoryTableRecord repositoryTableRecord) {
+	public RestaurantManagerPageController(String id, RepositoryMenu repositoryMenu, RepositoryTableRecord repositoryTableRecord) {
 		this.id = id;
 		this.repositoryMenu = repositoryMenu;
 		this.repositoryTableRecord = repositoryTableRecord;
 	}
 
-	public boolean deleteTableServiceRecords(Date date) {
+	public boolean deleteTableServiceRecords(LocalDate date) {
 		return repositoryTableRecord.deleteRecords(date);
 	}
 
-	public ArrayList<TableServiceRecord> getTableServiceRecords(Date date) {
+	public ArrayList<TableServiceRecord> getTableServiceRecords(LocalDate date) {
 		return repositoryTableRecord.getRecords(date);
 	}
 

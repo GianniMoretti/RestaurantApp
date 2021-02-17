@@ -1,20 +1,27 @@
 package com.restaurantapp.domainmodel;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class TableServiceRecord {
 	/*
-	 * TODO: serve? Creato al momento della distruzione...
-	 * TODO: ragionare su metodo save
+	 * TODO: serve? Creato al momento della distruzione... TODO: ragionare su metodo
+	 * save
 	 */
 	private String nominative;
 	private String phoneNumber;
-	private Date date;
+	private LocalDate date;
+
+	public TableServiceRecord(String nominative, String phoneNumber) {
+		this.nominative = nominative;
+		this.phoneNumber = phoneNumber;
+		this.date = LocalDate.now();
+	}
 	
-	public TableServiceRecord(String nominative,String phoneNumber,Date date) {
-		this.nominative=nominative;
-		this.phoneNumber=phoneNumber;
-		this.date=date;
+	//TODO: forse si può rimuovere
+	public TableServiceRecord(String nominative, String phoneNumber, LocalDate date) {
+		this.nominative = nominative;
+		this.phoneNumber = phoneNumber;
+		this.date = date;
 	}
 
 	public String getNominative() {
@@ -25,8 +32,8 @@ public class TableServiceRecord {
 		return phoneNumber;
 	}
 
-	public Date getDate() {
+	public LocalDate getDate() {
 		return date;
 	}
-	
+
 }

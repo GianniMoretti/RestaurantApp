@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class TableService {
 	/*
-	 * TODO: prezzo del coperto: prendere da menï¿½, fare una costante, creare una
+	 * TODO: prezzo del coperto: prendere da menu, fare una costante, creare una
 	 * classe...
 	 */
 	private static final double SERVICE_PRICE = 1.5;
@@ -14,17 +14,19 @@ public class TableService {
 	private Waiter waiter;
 	private ArrayList<Order> orders;
 
-	public TableService(Waiter waiter, ComposedTable composedTable, int service) {
+	public TableService(Waiter waiter, ComposedTable composedTable, int service,
+			TableServiceRecord tableServiceRecord) {
 		this.waiter = waiter;
 		this.composedTable = composedTable;
-		this.service = service;//n° coperti
+		this.service = service;// n° coperti
 		this.orders = new ArrayList<Order>();
+		this.tableServiceRecord = tableServiceRecord;
 	}
-	
+
 	public void addOrder(Order order) {
 		orders.add(order);
 	}
-	
+
 	public double getBill() {
 		double total = 0;
 		for (Order order : orders)
@@ -32,12 +34,11 @@ public class TableService {
 		total += service * SERVICE_PRICE;
 		return total;
 	}
-	
 
 	public int getService() {
 		return service;
 	}
-	
+
 	public void setService(int service) {
 		this.service = service;
 	}

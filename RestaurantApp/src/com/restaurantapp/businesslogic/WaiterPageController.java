@@ -5,6 +5,7 @@ import com.restaurantapp.domainmodel.Order;
 import com.restaurantapp.domainmodel.TableContainer;
 import com.restaurantapp.domainmodel.TableService;
 import com.restaurantapp.domainmodel.TableServiceContainer;
+import com.restaurantapp.domainmodel.TableServiceRecord;
 import com.restaurantapp.domainmodel.TableState;
 import com.restaurantapp.domainmodel.Waiter;
 
@@ -23,12 +24,12 @@ public class WaiterPageController {
 		this.waiter = new Waiter(ID);
 	}
 
-	public boolean openTableService(int idTable, int service) {
+	public boolean openTableService(int idTable, int service, TableServiceRecord tsr) {
 		try {
 			ComposedTable ct = tableContainer.getTable(idTable);
 			if (ct.getTableState() == TableState.AVAILABLE) {
 				ct.setTableState(TableState.UNAVAILABLE);
-				TableService tableService = new TableService(this.waiter, ct, service);
+				TableService tableService = new TableService(this.waiter, ct, service, tsr);
 				tableServiceContainer.addTableService(tableService);
 				return true;
 			}

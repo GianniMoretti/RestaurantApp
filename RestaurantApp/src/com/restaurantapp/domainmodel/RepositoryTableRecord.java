@@ -1,10 +1,10 @@
 package com.restaurantapp.domainmodel;
 
 import java.util.ArrayList;
-import java.util.Date;
+import java.time.LocalDate;
 
 public interface RepositoryTableRecord {
 	public void addRecord(TableServiceRecord tsr);
-	public ArrayList<TableServiceRecord> getRecords(Date date);
-	public boolean deleteRecords(Date date);
+	public ArrayList<TableServiceRecord> getRecords(LocalDate date);
+	public boolean deleteRecords(LocalDate date);
 }

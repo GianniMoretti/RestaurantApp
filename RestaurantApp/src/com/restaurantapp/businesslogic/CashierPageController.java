@@ -3,6 +3,7 @@ package com.restaurantapp.businesslogic;
 import com.restaurantapp.domainmodel.RepositoryTableRecord;
 import com.restaurantapp.domainmodel.TableService;
 import com.restaurantapp.domainmodel.TableServiceContainer;
+import com.restaurantapp.domainmodel.TableServiceRecord;
 import com.restaurantapp.domainmodel.TableState;
 
 public class CashierPageController {
@@ -26,4 +27,16 @@ public class CashierPageController {
 			return -1;
 		}
 	}
+	
+	/*public double getBill(int id, TableServiceRecord tsr) {
+		try {
+			TableService ts = tableServiceContainer.getTableService(id);
+			tableServiceContainer.removeTableService(ts);
+			repository.addRecord(ts.getTableServiceRecord());
+			ts.getComposedTable().setTableState(TableState.DIRTY);
+			return ts.getBill();
+		} catch(IndexOutOfBoundsException e) {
+			return -1;
+		}
+	}*/
 }

@@ -2,8 +2,9 @@ package com.restaurantapp.businesslogic;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Arrays;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
@@ -51,16 +52,8 @@ class CashierPagecontrollerTest {
 		tc.addTable(ct1);
 		tc.addTable(ct2);
 
-		TableService ts1 = new TableService(new Waiter(7015028), ct1, 4);
-		TableServiceRecord record1 = new TableServiceRecord("Francesco", "123456789", new Date());
-		ts1.setTableServiceRecord(record1);
-		TableService ts2 = new TableService(new Waiter(7010270), ct2, 3);
-		TableServiceRecord record2 = new TableServiceRecord("Gianni", "987654321", new Date());
-		ts2.setTableServiceRecord(record2);
-		
-		records = new ArrayList<>();
-		records.add(record1);
-		records.add(record2);
+		TableService ts1 = new TableService(new Waiter(7015028), ct1, 4, new TableServiceRecord("Francesco", "123456789"));
+		TableService ts2 = new TableService(new Waiter(7010270), ct2, 3, new TableServiceRecord("Gianni", "987654321"));
 
 		TableServiceContainer tsc = TableServiceContainer.getInstance();
 		tsc.addTableService(ts1);
@@ -128,11 +121,16 @@ class CashierPagecontrollerTest {
 	@Test
 	@DisplayName("getBill should return the exact price")
 	void testGetBill() {
+		records = new ArrayList<>();
+		records.add(new TableServiceRecord("Francesco", "123456789"));
+		records.add(new TableServiceRecord("Gianni", "987654321"));
+		
 		assertEquals(44, CPC.getBill(40), "Bill with added and removed ingredients");
 		assertEquals(25.5, CPC.getBill(60), "Bill with write off");
-		assertEquals(TableState.DIRTY, TableContainer.getInstance().getTable(40).getTableState(), "Assert table state");
-		assertEquals(TableState.DIRTY, TableContainer.getInstance().getTable(60).getTableState(), "Assert table state");
-		assertTrue(records.equals(repository.getRecords(new Date())), "check saved records");
+		assertEquals(TableState.DIRTY, TableContainer.getInstance().getTable(40).getTableState(), "Assert first DIRTY");
+		assertEquals(TableState.DIRTY, TableContainer.getInstance().getTable(60).getTableState(), "Assert second DIRTY");
+		
+		assertEquals(2, repository.getRecords(LocalDate.now()).size(), "check saved records");
 	}
 	
 }

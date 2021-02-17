@@ -2,8 +2,8 @@ package com.restaurantapp.businesslogic;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
@@ -22,27 +22,31 @@ class RestaurantManagerPageControllerTest {
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		RepositoryTableRecord repository = new FakeTableRecord();
-		RMPC = new RestaurantManagerPageController("7015028", new FakeMenuData(), repository);
-		repository.addRecord(new TableServiceRecord("Francesco", "123456789", new Date()));
-		repository.addRecord(new TableServiceRecord("Gianni", "987654321", new Date()));
 		
-		records=repository.getRecords(new Date());
+		RMPC = new RestaurantManagerPageController("7015028", new FakeMenuData(), repository);
+		
+		repository.addRecord(new TableServiceRecord("Francesco", "123456789"));
+		repository.addRecord(new TableServiceRecord("Gianni", "987654321"));
+		
+		records=repository.getRecords(LocalDate.now());
+		
 	}
 	
 	@Test
 	@DisplayName("Get Table Service should work")
 	void testGetTableServiceRecords() {
 		
-		assertTrue(records.equals(RMPC.getTableServiceRecords(new Date())), "get table service record");
+		assertTrue(records.equals(RMPC.getTableServiceRecords(LocalDate.now())), "get table service record");
 	}
 	
 	@Test
 	@DisplayName("Delete Table Service should work")
 	void testDeleteTableServiceRecords() {
 		ArrayList<TableServiceRecord> tmp = new ArrayList<>();
-		assertTrue(RMPC.deleteTableServiceRecords(new Date()), "delete records");
-		assertTrue(tmp.equals(RMPC.getTableServiceRecords(new Date())), "check if the record list is empty");
-		assertFalse(RMPC.deleteTableServiceRecords(new Date()));
+		assertFalse(tmp.equals(RMPC.getTableServiceRecords(LocalDate.now())), "check if the record list is not empty");
+		assertTrue(RMPC.deleteTableServiceRecords(LocalDate.now()), "delete records");
+		assertTrue(tmp.equals(RMPC.getTableServiceRecords(LocalDate.now())), "check if the record list is empty");
+		assertFalse(RMPC.deleteTableServiceRecords(LocalDate.now()), "no data to delete");
 	}
 
 }

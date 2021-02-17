@@ -13,7 +13,7 @@ import com.restaurantapp.domainmodel.Order;
 import com.restaurantapp.domainmodel.OrderRecord;
 import com.restaurantapp.domainmodel.PhisicalTable;
 import com.restaurantapp.domainmodel.TableContainer;
-import com.restaurantapp.domainmodel.TableServiceContainer;
+import com.restaurantapp.domainmodel.TableServiceRecord;
 import com.restaurantapp.domainmodel.TableState;
 
 
@@ -54,10 +54,11 @@ class WaiterPageControllerTest {
 	@Test
 	@DisplayName("Ensures that table service opening takes place correctly")
 	void testOpenTableService() {		
-		assertTrue(WPC.openTableService(40, 6), "Table service created");
-		assertFalse(WPC.openTableService(40, 6) ,"Table not available");
-		assertFalse(WPC.openTableService(16, 4) ,"Table not found");
-		assertFalse(WPC.openTableService(60, 4) ,"Table unusable");
+		assertTrue(WPC.openTableService(40, 6, new TableServiceRecord("Francesco", "7015028")), "Table service created");
+		//assertTrue(WPC.openTableService(idTable, service))
+		assertFalse(WPC.openTableService(40, 6, new TableServiceRecord("Francesco", "7015028")) ,"Table not available");
+		assertFalse(WPC.openTableService(16, 4, new TableServiceRecord("Francesco", "7015028")) ,"Table not found");
+		assertFalse(WPC.openTableService(70, 4, new TableServiceRecord("Francesco", "7015028")) ,"Table unusable");
 	}
 
 	@Test
@@ -79,7 +80,7 @@ class WaiterPageControllerTest {
 		 assertEquals(false, orderRecord.removeIngredient(ingredient),"Ingredient not inside");*/
 		 
 		 order.addOrderRecord(orderRecord);
-		 WPC.openTableService(60, 3);
+		 WPC.openTableService(60, 3, new TableServiceRecord("Francesco", "7015028"));
 		 	 
 		 assertTrue(WPC.placeOrderToTableService(order, 60),"Order placed");
 		 assertFalse(WPC.placeOrderToTableService(order, 20),"Order placed");

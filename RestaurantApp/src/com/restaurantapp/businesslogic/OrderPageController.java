@@ -26,5 +26,9 @@ public abstract class OrderPageController implements Observer{
 	public void detach(Observable obs) {
 		obs.deleteObserver(this);
 	}
+	
+	public ArrayList<OrderRecord> getRecords() {
+		return this.orderRecords;
+	}
 }
 

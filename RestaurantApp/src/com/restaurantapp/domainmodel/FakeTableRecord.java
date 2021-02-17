@@ -1,15 +1,15 @@
 package com.restaurantapp.domainmodel;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
-public class FakeTableRecord implements RepositoryTableRecord{
-	
+public class FakeTableRecord implements RepositoryTableRecord {
+
 	private ArrayList<TableServiceRecord> records;
-	
+
 	public FakeTableRecord() {
-		records= new ArrayList<TableServiceRecord>();
+		records = new ArrayList<TableServiceRecord>();
 	}
 
 	@Override
@@ -18,24 +18,29 @@ public class FakeTableRecord implements RepositoryTableRecord{
 	}
 
 	@Override
-	public ArrayList<TableServiceRecord> getRecords(Date date) {
-		ArrayList<TableServiceRecord> tmp= new ArrayList<TableServiceRecord>();
-		for(TableServiceRecord record: records) {
-			if(new SimpleDateFormat("MM-dd-yyyy").format(record.getDate())==new SimpleDateFormat("MM-dd-yyyy").format(date))
-				tmp.add(record);	
+	public ArrayList<TableServiceRecord> getRecords(LocalDate date) {
+		ArrayList<TableServiceRecord> tmp = new ArrayList<TableServiceRecord>();
+		for (TableServiceRecord record : records) {
+			if (record.getDate().equals(date))
+				tmp.add(record);
 		}
 		return tmp;
 	}
 
 	@Override
-	public boolean deleteRecords(Date date) {
-		ArrayList<TableServiceRecord> tmp= new ArrayList<TableServiceRecord>();
-		for(TableServiceRecord record: records) {
-			if(new SimpleDateFormat("MM-dd-yyyy").format(record.getDate())==new SimpleDateFormat("MM-dd-yyyy").format(date)){
+	public boolean deleteRecords(LocalDate date) {
+		ArrayList<TableServiceRecord> tmp = new ArrayList<TableServiceRecord>();
+		for (TableServiceRecord record : records) {
+			if (record.getDate().equals(date))
 				tmp.add(record);
-			}
 		}
-		return records.removeAll(tmp);
+		if(tmp.isEmpty())
+			return false;
+		else {
+			for(TableServiceRecord tsr:tmp)
+				records.remove(tsr);
+			return true;
+		}
 	}
 
 }

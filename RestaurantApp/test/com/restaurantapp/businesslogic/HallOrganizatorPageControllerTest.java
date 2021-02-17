@@ -27,7 +27,7 @@ class HallOrganizatorPageControllerTest {
 	}
 
 	@Test
-	@DisplayName("Create Composed Table should work")
+	@DisplayName("Set Composed Table Unusable should work")
 	void testSetTableUnusable() {
 		assertTrue(HOPC.setTablesUnusable(new int[] { 2, 4, 6 }), "set table unusable");
 		HOPC.createComposedTable(12, new int[] { 10 });
