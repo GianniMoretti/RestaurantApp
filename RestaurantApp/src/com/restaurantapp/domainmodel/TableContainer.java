@@ -54,4 +54,9 @@ public class TableContainer {
 		}
 		return false;
 	}
+
+	public ArrayList<ComposedTable> getTables() {
+		return tables;
+	}
+		
 }

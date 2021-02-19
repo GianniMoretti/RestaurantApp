@@ -10,11 +10,14 @@ import org.junit.jupiter.api.DisplayName;
 import com.restaurantapp.domainmodel.ComposedTable;
 import com.restaurantapp.domainmodel.Dish;
 import com.restaurantapp.domainmodel.FakeMenuData;
+import com.restaurantapp.domainmodel.Ingredient;
 import com.restaurantapp.domainmodel.Menu;
 import com.restaurantapp.domainmodel.Order;
 import com.restaurantapp.domainmodel.OrderRecord;
 import com.restaurantapp.domainmodel.PhisicalTable;
 import com.restaurantapp.domainmodel.TableContainer;
+import com.restaurantapp.domainmodel.TableService;
+import com.restaurantapp.domainmodel.TableServiceContainer;
 import com.restaurantapp.domainmodel.TableServiceRecord;
 import com.restaurantapp.domainmodel.TableState;
 
@@ -39,9 +42,8 @@ class WaiterPageControllerTest {
         ComposedTable ct1 = new ComposedTable(60);
         ct1.addTable(pt5);
         
-        ComposedTable ct2 = new ComposedTable(70);
+        ComposedTable ct2 = new ComposedTable(TableState.UNUSABLE,70);
         ct2.addTable(pt6);
-        ct2.setTableState(TableState.UNUSABLE);
         
         TableContainer tc = TableContainer.getInstance();
         tc.addTable(ct);
@@ -56,10 +58,10 @@ class WaiterPageControllerTest {
 	@Test
 	@DisplayName("Ensures that table service opening takes place correctly")
 	void testOpenTableService() {		
-		assertTrue(WPC.openTableService(40, 6, new TableServiceRecord("Francesco", "7015028")), "Table service created");
-		assertFalse(WPC.openTableService(40, 6, new TableServiceRecord("Francesco", "7015028")) ,"Table not available");
-		assertFalse(WPC.openTableService(16, 4, new TableServiceRecord("Francesco", "7015028")) ,"Table not found");
-		assertFalse(WPC.openTableService(70, 4, new TableServiceRecord("Francesco", "7015028")) ,"Table unusable");
+		assertTrue(WPC.openTableService(40, new TableServiceRecord("Francesco", "7015028")), "Table service created");
+		assertFalse(WPC.openTableService(40, new TableServiceRecord("Francesco", "7015028")) ,"Table not available");
+		assertFalse(WPC.openTableService(16, new TableServiceRecord("Francesco", "7015028")) ,"Table not found");
+		assertFalse(WPC.openTableService(70, new TableServiceRecord("Francesco", "7015028")) ,"Table unusable");
 	}
 
 	@Test
@@ -69,22 +71,21 @@ class WaiterPageControllerTest {
 		 Order order = new Order();
 		 
 		 Dish dish = menu.getDishes().get(0);
-		 //Ingredient ingredient = menu.getIngredients().get(1); //FIXME: Non è presente
+		 Ingredient ingredient = menu.getIngredients().get(1);
 		 
 		 OrderRecord orderRecord = new OrderRecord(dish);
 		 orderRecord.setComment("impasto integrale");
 		 
-		 //TODO: Vediamo se deve esserci
-		 /*assertEquals(true, orderRecord.addIngredient(ingredient),"Ingredient added");
-		 assertEquals(false, orderRecord.addIngredient(dish.getIngredients().get(0)),"Ingredient already inside");
-		 assertEquals(true, orderRecord.removeIngredient(ingredient),"Ingredient removed");
-		 assertEquals(false, orderRecord.removeIngredient(ingredient),"Ingredient not inside");*/
+		 assertTrue(orderRecord.addIngredient(ingredient),"Ingredient added");
+		 assertFalse(orderRecord.addIngredient(dish.getIngredients().get(0)),"Ingredient already inside");
+		 assertTrue(orderRecord.removeIngredient(ingredient),"Ingredient removed");
+		 assertFalse(orderRecord.removeIngredient(ingredient),"Ingredient not inside");
 		 
 		 order.addOrderRecord(orderRecord);
-		 WPC.openTableService(60, 3, new TableServiceRecord("Francesco", "7015028"));
+		 WPC.openTableService(60, new TableServiceRecord("Francesco", "7015028"));
 		 	 
 		 assertTrue(WPC.placeOrderToTableService(order, 60),"Order placed");
-		 assertFalse(WPC.placeOrderToTableService(order, 20),"Order placed");
+		 assertFalse(WPC.placeOrderToTableService(order, 20),"try to place an Order to unexistent TableService");
 	}
 	
 	@AfterAll
@@ -92,5 +93,9 @@ class WaiterPageControllerTest {
 		TableContainer.getInstance().deleteTable(40);
 		TableContainer.getInstance().deleteTable(60);
 		TableContainer.getInstance().deleteTable(70);
+		TableService ts= TableServiceContainer.getInstance().getTableService(40);
+		TableServiceContainer.getInstance().removeTableService(ts);
+		ts= TableServiceContainer.getInstance().getTableService(60);
+		TableServiceContainer.getInstance().removeTableService(ts);
 	}
 }

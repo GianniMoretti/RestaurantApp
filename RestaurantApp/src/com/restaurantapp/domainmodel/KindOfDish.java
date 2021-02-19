@@ -7,5 +7,6 @@ public enum KindOfDish {
 	SIDE_DISH,
 	PIZZA,
 	DESSERT,
-	DRINK
+	DRINK,
+	SERVICE
 }

@@ -16,7 +16,7 @@ public class Dish {
 	}
 
 	public void addIngredient(Ingredient ingredient) {
-		if(!ingredients.contains(ingredient))
+		if(!ingredients.contains(ingredient) && !(kindOfDish==KindOfDish.DRINK || kindOfDish==KindOfDish.SERVICE))
 			ingredients.add(ingredient);
 	}
 

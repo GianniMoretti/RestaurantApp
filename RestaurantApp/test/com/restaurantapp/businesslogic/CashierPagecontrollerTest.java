@@ -53,14 +53,30 @@ class CashierPagecontrollerTest {
 		tc.addTable(ct1);
 		tc.addTable(ct2);
 
-		TableService ts1 = new TableService(new Waiter(7015028), ct1, 4, new TableServiceRecord("Francesco", "123456789"));
-		TableService ts2 = new TableService(new Waiter(7010270), ct2, 3, new TableServiceRecord("Gianni", "987654321"));
+		TableService ts1 = new TableService(new Waiter(7015028), ct1, new TableServiceRecord("Francesco", "123456789"));
+		TableService ts2 = new TableService(new Waiter(7010270), ct2, new TableServiceRecord("Gianni", "987654321"));
 
 		TableServiceContainer tsc = TableServiceContainer.getInstance();
 		tsc.addTableService(ts1);
 		tsc.addTableService(ts2);
 
 		Menu menu = new Menu(new FakeMenuData());
+		
+		Order service1= new Order();
+		for(int i=0; i<4 ; i++) {
+			OrderRecord or0= new OrderRecord(menu.getDishes().get(8));
+			service1.addOrderRecord(or0);
+		}
+		
+		ts1.addOrder(service1);
+		
+		Order service2= new Order();
+		for(int i=0; i<3 ; i++) {
+			OrderRecord or0= new OrderRecord(menu.getDishes().get(8));
+			service2.addOrderRecord(or0);
+		}
+		
+		ts2.addOrder(service2);
 
 		Order o1 = new Order();
 		

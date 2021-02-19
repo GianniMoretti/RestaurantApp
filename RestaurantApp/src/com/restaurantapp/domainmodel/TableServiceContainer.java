@@ -11,11 +11,9 @@ import java.util.ArrayList;
 
 public class TableServiceContainer {
 	private ArrayList<TableService> tableServices;
-	private OrderManager orderManager;
 	private static TableServiceContainer instance= null;
 
 	private TableServiceContainer() {
-		this.orderManager = OrderManager.getInstance();
 		tableServices = new ArrayList<TableService>();
 	}
 	
@@ -44,9 +42,8 @@ public class TableServiceContainer {
 			TableService ts = getTableService(id);
 			ts.addOrder(order);
 			if(!order.isWriteOff())
-				orderManager.addOrder(ts.getOrders().get(ts.getOrders().size()-1));
+				OrderManager.getInstance().addOrder(ts.getOrders().get(ts.getOrders().size()-1));
 			return true;
-				// FIXME: verificare che venga inviato l'ultimo ordine aggiunto al tableService
 		} catch (IndexOutOfBoundsException e) {
 			return false;
 		}

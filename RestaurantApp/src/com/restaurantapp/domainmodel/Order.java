@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Order {
 	/*
-	 * TODO: riguardare metodi REMOVE e MODIFY... writeOff viene messo a false se
-	 * ordine mandato in cucina e contato positivamente nel conto messo a true se
+	 * WriteOff viene messo a false se
+	 * ordine mandato in cucina e contato positivamente nel conto, messo a true se
 	 * non viene mandato in cucina (comunicazione orale) e contato negativamente nel
 	 * conto
 	 */

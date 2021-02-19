@@ -15,17 +15,17 @@ import com.restaurantapp.domainmodel.TableState;
  */
 public class HallOrganizatorPageController {
 
-	// il riferimento ai tavoli fisici si trova sia nel composed che nella lista.
 	private ArrayList<PhisicalTable> tables;
-	private TableContainer tableContainer;
 
 	public HallOrganizatorPageController(ArrayList<PhisicalTable> tables) {
 		this.tables = tables;
-		this.tableContainer = TableContainer.getInstance();
 	}
 
-	// TODO: Creare l'id potrebbe dare problemi, cosa si può fare?
-	public boolean createComposedTable(int id, int[] IDs) {
+	public boolean createComposedTable(int id, int[] IDs){
+		for(ComposedTable ct: TableContainer.getInstance().getTables()) {
+			if(ct.getTableID()==id)
+				return false;
+		}
 		ComposedTable c = new ComposedTable(id);
 		ArrayList<PhisicalTable> tmp = new ArrayList<PhisicalTable>();
 
@@ -37,12 +37,10 @@ public class HallOrganizatorPageController {
 					return false;
 			}
 		}
-
 		for (PhisicalTable t : tmp) {
 			c.addTable(t);
 		}
-
-		tableContainer.addTable(c);
+		TableContainer.getInstance().addTable(c);
 		return true;
 	}
 
@@ -51,27 +49,26 @@ public class HallOrganizatorPageController {
 
 		for (int i = 0; i < IDs.length; i++) {
 			for (PhisicalTable t : tables) {
-				if (t.getTableID() == IDs[i] && t.isAvailable()) //e se sono già in altri tavoli composti?
+				if (t.getTableID() == IDs[i] && t.isAvailable()) 
 					tmp.add(t);
 			}
 		}
-		
-		if (tmp.size() == 0)
+		if (tmp.size() != IDs.length)
 			return false;
 		
 		for (PhisicalTable t : tmp) {
 			ComposedTable c = new ComposedTable(TableState.UNUSABLE, t.getTableID());
 			c.addTable(t);
-			tableContainer.addTable(c);
+			TableContainer.getInstance().addTable(c);
 		}
 		return true;
 	}
 
 	public boolean deleteComposedTable(int id) {
-		return tableContainer.deleteTable(id);
+		return TableContainer.getInstance().deleteTable(id);
 	}
 
 	public boolean setComposedTableAvailable(int id) {
-		return tableContainer.setComposedTableAvailable(id);
+		return TableContainer.getInstance().setComposedTableAvailable(id);
 	}
 }

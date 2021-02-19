@@ -10,8 +10,6 @@ import java.util.Observable;
 
 public abstract class OrderPageController implements Observer{
 
-	//TODO: va bene protected?
-	//Perchè lo abbiamo fatto? -> più facile aggiungere altri controller
 	protected ArrayList<OrderRecord> orderRecords;
 	
 	@Override

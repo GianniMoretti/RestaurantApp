@@ -9,7 +9,6 @@ import com.restaurantapp.domainmodel.RepositoryMenu;
 import com.restaurantapp.domainmodel.RepositoryTableRecord;
 import com.restaurantapp.domainmodel.TableServiceRecord;
 
-// TODO: Singleton
 // login attraverso l'interfaccia prende l'ID e chiama il costruttore del RestaurantManagerPageController
 
 public class RestaurantManagerPageController {

@@ -99,6 +99,10 @@ public class FakeMenuData implements RepositoryMenu {
 		d.addIngredient(ingredients.get("Gelato al Cioccolato"));
 		d.addIngredient(ingredients.get("Banana"));
 		dishes.add(d);
+
+		d= new Dish("Service", 1.5, KindOfDish.SERVICE);
+		dishes.add(d);
+		
 		
 	}
 }

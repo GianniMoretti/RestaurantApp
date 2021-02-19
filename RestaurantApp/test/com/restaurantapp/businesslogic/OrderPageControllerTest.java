@@ -18,6 +18,8 @@ import com.restaurantapp.domainmodel.OrderManager;
 import com.restaurantapp.domainmodel.OrderRecord;
 import com.restaurantapp.domainmodel.PhisicalTable;
 import com.restaurantapp.domainmodel.TableContainer;
+import com.restaurantapp.domainmodel.TableService;
+import com.restaurantapp.domainmodel.TableServiceContainer;
 import com.restaurantapp.domainmodel.TableServiceRecord;
 
 class OrderPageControllerTest {
@@ -26,6 +28,7 @@ class OrderPageControllerTest {
 	private static BarController BC;
 	private static PizzeriaController PC;
 	private static Menu menu;
+	private static WaiterPageController WPC;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -48,15 +51,21 @@ class OrderPageControllerTest {
 			OrderRecord or = new OrderRecord(d);
 			order.addOrderRecord(or);
 		}
-
+		
+		Order order1 = new Order(true);
+		Dish d= menu.getDishes().get(2);
+		OrderRecord or1= new OrderRecord(d);
+		order1.addOrderRecord(or1);
+		
 		KC = new KitchenController(OrderManager.getInstance());
 		BC = new BarController(OrderManager.getInstance());
 		PC = new PizzeriaController(OrderManager.getInstance());
 
-		WaiterPageController WPC = new WaiterPageController(7015028);
+		WPC = new WaiterPageController(7015028);
 
-		WPC.openTableService(40, 4, new TableServiceRecord("Francesco", "123456789"));
+		WPC.openTableService(40, new TableServiceRecord("Francesco", "123456789"));
 		WPC.placeOrderToTableService(order, 40);
+		WPC.placeOrderToTableService(order1, 40);
 	}
 
 	@Test
@@ -73,22 +82,34 @@ class OrderPageControllerTest {
 		for (int i = 5; i < 8; i++)
 			bar.add(new OrderRecord(menu.getDishes().get(i)));
 
-		assertEquals(4, KC.getRecords().size(), "kitchen records is of the right size");
+		assertEquals(4, KC.getRecords().size(), "kitchen records is of right size");
 		KC.getRecords().retainAll(kitchen);
 		assertTrue(KC.getRecords().isEmpty(), "check kitchen records");
 
-		assertEquals(1, PC.getRecords().size(), "pizzeria records is of the right size");
+		assertEquals(1, PC.getRecords().size(), "pizzeria records is of right size");
 		PC.getRecords().retainAll(pizzeria);
 		assertTrue(PC.getRecords().isEmpty(), "check pizzeria records");
 
-		assertEquals(3, BC.getRecords().size(), "bar records is of the right size");
+		assertEquals(3, BC.getRecords().size(), "bar records is of right size");
 		BC.getRecords().retainAll(bar);
 		assertTrue(BC.getRecords().isEmpty(), "check bar records");
+		
+		Order order2= new Order();
+		Dish d= menu.getDishes().get(0);
+		OrderRecord or2= new OrderRecord(d);
+		order2.addOrderRecord(or2);
+		WPC.placeOrderToTableService(order2,40);
+		
+		assertEquals(1, KC.getRecords().size(), "kitchen has received right order");
+		assertTrue(PC.getRecords().isEmpty(), "pizzeria hasn't received any order");
+		assertTrue(BC.getRecords().isEmpty(), "bar hasn't received any order");
 
 	}
 	
 	@AfterAll
 	static void cleanUp() {
 		TableContainer.getInstance().deleteTable(40);
+		TableService ts= TableServiceContainer.getInstance().getTableService(40);
+		TableServiceContainer.getInstance().removeTableService(ts);
 	}
 }

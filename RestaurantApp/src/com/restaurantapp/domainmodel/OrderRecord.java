@@ -29,6 +29,8 @@ public class OrderRecord {
 	}
 	
 	public boolean addIngredient(Ingredient ingredient) {
+		if(dish.getKindOfDish()==KindOfDish.DRINK || dish.getKindOfDish()==KindOfDish.SERVICE)
+			return false;
 		if(!dish.getIngredients().contains(ingredient) && !addedIngredients.contains(ingredient)) {
 			addedIngredients.add(ingredient);
 			return true;
@@ -37,6 +39,8 @@ public class OrderRecord {
 	}
 
 	public boolean removeIngredient(Ingredient ingredient) {
+		if(dish.getKindOfDish()==KindOfDish.DRINK || dish.getKindOfDish()==KindOfDish.SERVICE)
+			return false;
 		if((dish.getIngredients().contains(ingredient) || addedIngredients.contains(ingredient)) && !removedIngredients.contains(ingredient)) {
 			removedIngredients.add(ingredient);
 			return true;
