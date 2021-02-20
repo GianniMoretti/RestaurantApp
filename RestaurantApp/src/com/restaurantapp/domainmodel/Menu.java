@@ -2,6 +2,8 @@ package com.restaurantapp.domainmodel;
 
 import java.util.ArrayList;
 
+// Creato dall'interfaccia del cameriere al momento del login
+
 public class Menu {
 	
 	private RepositoryMenu repositoryMenu;

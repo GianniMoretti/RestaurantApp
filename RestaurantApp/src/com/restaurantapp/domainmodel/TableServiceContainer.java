@@ -2,13 +2,6 @@ package com.restaurantapp.domainmodel;
 
 import java.util.ArrayList;
 
-/*
- * lavorare in locale attraverso il waiterpage,
- * oppure spostare i metodi all'interno del mediator??
- * In caso, rimuovere il modifyTableService?
- * NB: controlla il send in addTableService
- */
-
 public class TableServiceContainer {
 	private ArrayList<TableService> tableServices;
 	private static TableServiceContainer instance= null;

@@ -2,6 +2,12 @@ package com.restaurantapp.domainmodel;
 
 import java.util.ArrayList;
 
+/*
+ * id settato come quello di Order, in questo modo la cucina 
+ * puo' conoscere la precedenza delle comande
+ *
+ */
+
 public class OrderRecord {
 	private int id;
 	private Dish dish;
@@ -10,7 +16,6 @@ public class OrderRecord {
 	private ArrayList<Ingredient> removedIngredients;
 
 	public OrderRecord(Dish dish) {
-		//this.id = id;
 		this.dish = dish;
 		addedIngredients = new ArrayList<Ingredient>();
 		removedIngredients = new ArrayList<Ingredient>();
