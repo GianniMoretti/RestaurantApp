@@ -9,15 +9,17 @@ import com.restaurantapp.domainmodel.TableState;
 
 /*
  * Login attraverso interfaccia che chiama il costruttore.
- * Metodo per settare i tavoli non usabili a inizio serata, 
+ * Metodo per settare i tavoli non utilizzabili a inizio serata, 
  * per distruggere un composed table o per renderlo disponibile senza distruggerlo.
  * (Non ci sono controlli sullo stato del composed table prima di distruggerlo).
  */
 public class HallOrganizatorPageController {
 
 	private ArrayList<PhisicalTable> tables;
+	private String id;
 
-	public HallOrganizatorPageController(ArrayList<PhisicalTable> tables) {
+	public HallOrganizatorPageController(ArrayList<PhisicalTable> tables, String id){
+		this.id=id;
 		this.tables = tables;
 	}
 
@@ -71,4 +73,9 @@ public class HallOrganizatorPageController {
 	public boolean setComposedTableAvailable(int id) {
 		return TableContainer.getInstance().setComposedTableAvailable(id);
 	}
+
+	public String getId() {
+		return id;
+	}
+	
 }

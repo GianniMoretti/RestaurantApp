@@ -10,7 +10,8 @@ import com.restaurantapp.domainmodel.OrderRecord;
 
 public class PizzeriaController extends OrderPageController{
 
-	public PizzeriaController(Observable obs) {
+	public PizzeriaController(Observable obs, String id) {
+		this.id=id;
 		obs.addObserver(this);
 		orderRecords = new ArrayList<OrderRecord>();
 	}

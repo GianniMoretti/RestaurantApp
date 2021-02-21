@@ -6,4 +6,9 @@ public class Waiter {
 	public Waiter(String waiterID) {
 		this.waiterID = waiterID;
 	}
+
+	public String getWaiterID() {
+		return waiterID;
+	}
+	
 }

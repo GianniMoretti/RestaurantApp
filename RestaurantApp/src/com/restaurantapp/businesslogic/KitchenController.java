@@ -11,7 +11,8 @@ import com.restaurantapp.domainmodel.OrderRecord;
 
 public class KitchenController extends OrderPageController{
 
-	public KitchenController(Observable obs) {    // OrderManager.getInstance()
+	public KitchenController(Observable obs,  String id) {
+		this.id=id;
 		obs.addObserver(this);
 		orderRecords = new ArrayList<OrderRecord>();
 	}

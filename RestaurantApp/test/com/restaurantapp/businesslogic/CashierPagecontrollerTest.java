@@ -131,7 +131,7 @@ class CashierPagecontrollerTest {
 		ts2.addOrder(o4);
 
 		repository = new FakeTableRecord();
-		CPC = new CashierPageController(repository);
+		CPC = new CashierPageController(repository, "7233977");
 
 	}
 

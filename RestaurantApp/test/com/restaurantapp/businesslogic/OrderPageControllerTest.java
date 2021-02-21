@@ -57,9 +57,9 @@ class OrderPageControllerTest {
 		OrderRecord or1= new OrderRecord(d);
 		order1.addOrderRecord(or1);
 		
-		KC = new KitchenController(OrderManager.getInstance());
-		BC = new BarController(OrderManager.getInstance());
-		PC = new PizzeriaController(OrderManager.getInstance());
+		KC = new KitchenController(OrderManager.getInstance(), "7011259");
+		BC = new BarController(OrderManager.getInstance(), "7021567");
+		PC = new PizzeriaController(OrderManager.getInstance(), "7147998");
 
 		WPC = new WaiterPageController("7015028");
 

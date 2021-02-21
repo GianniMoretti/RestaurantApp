@@ -24,7 +24,7 @@ class HallOrganizatorPageControllerTest {
 		for (int i = 0; i < 10; i++)
 			tables.add(new PhisicalTable(i));
 
-		HOPC = new HallOrganizatorPageController(tables);
+		HOPC = new HallOrganizatorPageController(tables, "7083421");
 	}
 
 	@Test

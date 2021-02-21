@@ -40,5 +40,9 @@ public class WaiterPageController {
 	public boolean placeOrderToTableService(Order order, int id) {
 		return TableServiceContainer.getInstance().placeOrderToTableService(order, id);
 	}
+	
+	public String getWaiterID() {
+		return this.waiter.getWaiterID();
+	}
 
 }

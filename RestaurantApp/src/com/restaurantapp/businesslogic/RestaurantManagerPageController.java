@@ -12,7 +12,7 @@ import com.restaurantapp.domainmodel.TableServiceRecord;
 // login attraverso l'interfaccia prende l'ID e chiama il costruttore del RestaurantManagerPageController
 
 public class RestaurantManagerPageController {
-	private String id;// = null; //da levare?
+	private String id;
 	private RepositoryMenu repositoryMenu;
 	private RepositoryTableRecord repositoryTableRecord;
 

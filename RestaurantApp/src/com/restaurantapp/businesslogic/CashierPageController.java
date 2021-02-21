@@ -8,9 +8,11 @@ import com.restaurantapp.domainmodel.TableState;
 
 public class CashierPageController {
 	private RepositoryTableRecord repository;
+	private String id;
 
-	public CashierPageController(RepositoryTableRecord repository) {
+	public CashierPageController(RepositoryTableRecord repository, String id) {
 		this.repository = repository;
+		this.id=id;
 	}
 
 	public double getBill(int id) {

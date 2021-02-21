@@ -13,6 +13,7 @@ import java.util.Observable;
 public abstract class OrderPageController implements Observer{
 
 	protected ArrayList<OrderRecord> orderRecords;
+	protected String id;
 	
 	@Override
 	public void update(Observable ordermanager, Object order) {
@@ -29,5 +30,10 @@ public abstract class OrderPageController implements Observer{
 	public ArrayList<OrderRecord> getRecords() {
 		return this.orderRecords;
 	}
+
+	public String getId() {
+		return id;
+	}
+	
 }
 
