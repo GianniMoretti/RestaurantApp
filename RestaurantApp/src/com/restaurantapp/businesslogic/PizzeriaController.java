@@ -6,8 +6,6 @@ import com.restaurantapp.domainmodel.KindOfDish;
 import com.restaurantapp.domainmodel.Order;
 import com.restaurantapp.domainmodel.OrderRecord;
 
-//Interfaccia aperta direttamente senza login se si clicca sul pulsante Pizzeria
-
 public class PizzeriaController extends OrderPageController{
 
 	public PizzeriaController(Observable obs, String id) {

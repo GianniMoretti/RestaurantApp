@@ -7,8 +7,6 @@ import com.restaurantapp.domainmodel.KindOfDish;
 import com.restaurantapp.domainmodel.Order;
 import com.restaurantapp.domainmodel.OrderRecord;
 
-//Interfaccia aperta direttamente senza login se si clicca sul pulsante Bar
-
 public class BarController extends OrderPageController{
 	
 	public BarController(Observable obs, String id) {

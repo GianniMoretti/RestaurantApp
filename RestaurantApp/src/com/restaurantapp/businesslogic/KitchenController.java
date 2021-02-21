@@ -7,8 +7,6 @@ import com.restaurantapp.domainmodel.KindOfDish;
 import com.restaurantapp.domainmodel.Order;
 import com.restaurantapp.domainmodel.OrderRecord;
 
-// Interfaccia aperta direttamente senza login se si clicca sul pulsante Cucina
-
 public class KitchenController extends OrderPageController{
 
 	public KitchenController(Observable obs,  String id) {
