@@ -10,7 +10,6 @@ public class TableServiceContainer {
 		tableServices = new ArrayList<TableService>();
 	}
 	
-	// Singleton
 	public static TableServiceContainer getInstance(){
 		if(instance==null) {
 			instance= new TableServiceContainer();

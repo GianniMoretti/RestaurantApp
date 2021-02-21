@@ -11,7 +11,6 @@ public class OrderManager extends Observable {
 		orders = new ArrayList<Order> ();
 	}
 	
-	// Singleton
 	public static OrderManager getInstance() {
 		if(instance==null) {
 			instance= new OrderManager();

@@ -15,7 +15,6 @@ public class TableContainer {
 		tables = new ArrayList<ComposedTable>();
 	}
 	
-	// Singleton
 	public static TableContainer getInstance() {
 		if(instance==null)
 			instance= new TableContainer();

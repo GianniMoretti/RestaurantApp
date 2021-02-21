@@ -11,13 +11,14 @@ import com.restaurantapp.domainmodel.TableState;
 import com.restaurantapp.domainmodel.Waiter;
 
 /*
- * login attraverso l'interfaccia prende l'ID e chiama il costruttore del WaiterPageController
- * Interagisce direttamente con il mediator per agire sui TableService
+ * login attraverso l'interfaccia prende l'ID e chiama il costruttore del WaiterPageController,
+ * interagisce direttamente con il TableServiceContainer per agire sui TableService
  */
+
 public class WaiterPageController {
 	private Waiter waiter;
 
-	public WaiterPageController(int ID) {
+	public WaiterPageController(String ID) {
 		this.waiter = new Waiter(ID);
 	}
 

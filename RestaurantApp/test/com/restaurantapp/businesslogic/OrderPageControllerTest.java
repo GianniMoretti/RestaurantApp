@@ -61,7 +61,7 @@ class OrderPageControllerTest {
 		BC = new BarController(OrderManager.getInstance());
 		PC = new PizzeriaController(OrderManager.getInstance());
 
-		WPC = new WaiterPageController(7015028);
+		WPC = new WaiterPageController("7015028");
 
 		WPC.openTableService(40, new TableServiceRecord("Francesco", "123456789"));
 		WPC.placeOrderToTableService(order, 40);

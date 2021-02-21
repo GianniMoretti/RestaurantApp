@@ -50,7 +50,7 @@ class WaiterPageControllerTest {
         tc.addTable(ct1);
         tc.addTable(ct2);
         
-        WPC = new WaiterPageController(7010270);
+        WPC = new WaiterPageController("7011250");
         
         menu = new Menu(new FakeMenuData());
     }

@@ -53,8 +53,8 @@ class CashierPagecontrollerTest {
 		tc.addTable(ct1);
 		tc.addTable(ct2);
 
-		TableService ts1 = new TableService(new Waiter(7015028), ct1, new TableServiceRecord("Francesco", "123456789"));
-		TableService ts2 = new TableService(new Waiter(7010270), ct2, new TableServiceRecord("Gianni", "987654321"));
+		TableService ts1 = new TableService(new Waiter("7015028"), ct1, new TableServiceRecord("Francesco", "123456789"));
+		TableService ts2 = new TableService(new Waiter("7010270"), ct2, new TableServiceRecord("Gianni", "987654321"));
 
 		TableServiceContainer tsc = TableServiceContainer.getInstance();
 		tsc.addTableService(ts1);

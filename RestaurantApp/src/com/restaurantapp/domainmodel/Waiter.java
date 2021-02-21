@@ -1,9 +1,9 @@
 package com.restaurantapp.domainmodel;
 
 public class Waiter {
-	private int waiterID;
+	private String waiterID;
 
-	public Waiter(int waiterID) {
+	public Waiter(String waiterID) {
 		this.waiterID = waiterID;
 	}
 }
