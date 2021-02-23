@@ -2,7 +2,11 @@ package com.restaurantapp.domainmodel;
 
 import java.util.ArrayList;
 
-// Creato dall'interfaccia del cameriere al momento del login
+/*
+ * Creato dall'interfaccia del cameriere al momento del login
+ * Pigiando pulsante che rappresenta piatto nel menu
+ * ritorna il this del piatto per poterlo inserire nell'OrderRecord
+ */
 
 public class Menu {
 	
@@ -14,11 +18,6 @@ public class Menu {
 		this.repositoryMenu=repositoryMenu;
 		refresh();
 	}
-	
-	/*
-	 * Pigiando pulsante che rappresenta piatto nel menu
-	 * ritorna il this del piatto per poterlo inserire nell'OrderRecord
-	 */
 
 	public void refresh() {
 		this.dishes=repositoryMenu.getDishes();

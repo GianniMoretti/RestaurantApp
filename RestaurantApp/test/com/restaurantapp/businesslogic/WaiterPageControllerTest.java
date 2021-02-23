@@ -58,9 +58,9 @@ class WaiterPageControllerTest {
 	@Test
 	@DisplayName("Ensures that table service opening takes place correctly")
 	void testOpenTableService() {		
-		assertTrue(WPC.openTableService(40, new TableServiceRecord("Francesco", "7015028")), "Table service created");
-		assertFalse(WPC.openTableService(40, new TableServiceRecord("Francesco", "7015028")) ,"Table not available");
-		assertFalse(WPC.openTableService(16, new TableServiceRecord("Francesco", "7015028")) ,"Table not found");
+		assertTrue(WPC.openTableService(40, new TableServiceRecord("Francesco", "7013028")), "Table service created");
+		assertFalse(WPC.openTableService(40, new TableServiceRecord("Francesco", "7165028")) ,"Table not available");
+		assertFalse(WPC.openTableService(16, new TableServiceRecord("Gianni", "7015778")) ,"Table not found");
 		assertFalse(WPC.openTableService(70, new TableServiceRecord("Francesco", "7015028")) ,"Table unusable");
 	}
 
@@ -82,7 +82,7 @@ class WaiterPageControllerTest {
 		 assertFalse(orderRecord.removeIngredient(ingredient),"Ingredient not inside");
 		 
 		 order.addOrderRecord(orderRecord);
-		 WPC.openTableService(60, new TableServiceRecord("Francesco", "7015028"));
+		 WPC.openTableService(60, new TableServiceRecord("Gianni", "7019928"));
 		 	 
 		 assertTrue(WPC.placeOrderToTableService(order, 60),"Order placed");
 		 assertFalse(WPC.placeOrderToTableService(order, 20),"try to place an Order to unexistent TableService");
