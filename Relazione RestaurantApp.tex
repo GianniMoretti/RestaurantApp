@@ -64,7 +64,27 @@ Dalla descrizione del nostro modello di dominio, abbiamo individuato nelle varie
 \newpage
 
 \subsection{Use Case Template}
-Riportiamo di seguito dei template relativi ad alcuni dei pricipali casi d'uso individuati nel nostro progetto:
+Riportiamo di seguito i template relativi ad alcuni dei pricipali casi d'uso individuati nel nostro progetto:
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width= 10cm, height= 6cm]{"Immagini/CreateComposedTable.PNG"}
+\caption{Template che descrive il caso d'uso dell'organizzatore della sala per creare un tavolo composto}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width= 10cm, height= 6cm]{"Immagini/PlaceOrder.PNG"}
+\caption{Template che descrive il caso d'uso del cameriere per piazzare un ordine ad un servizio al tavolo}
+\end{figure}
+
+\newpage
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width= 10cm, height= 3.5cm]{"Immagini/GetBill.PNG"}
+\caption{Template che descrive il caso d'uso del cassiere per calcolare il conto di un servizio al tavolo}
+\end{figure}
 
 % betta
 
@@ -76,6 +96,8 @@ Riportiamo di seguito dei possibili mockups relativi alle interfaccie grafiche d
 \includegraphics[width= 10cm, height= 6cm]{"Immagini/HomePage.PNG"}
 \caption{Mockup raffigurante un prototipo della home page dell'app}
 \end{figure}
+
+\newpage
 
 \begin{figure}[!h]
 \centering
@@ -89,6 +111,8 @@ Riportiamo di seguito dei possibili mockups relativi alle interfaccie grafiche d
 \caption{Mockup raffigurante un prototipo dell'interfaccia dell'organizzatore della sala}
 \end{figure}
 
+\newpage
+
 \begin{figure}[!h]
 \centering
 \includegraphics[width= 10cm, height= 6cm]{"Immagini/OrdineCameriere.PNG"}
@@ -97,9 +121,11 @@ Riportiamo di seguito dei possibili mockups relativi alle interfaccie grafiche d
 
 \section{Progettazione e Implementazione}
 \subsection{Scelte implementative e considerazioni}
-L'applicativo si presta per essere relalizzato ed opearare come un sistema distribuito, prevedendo cio\'e un server centrale con al suo interno i dati comuni accessibili dai vari terminali attraverso un protocollo di comunicazione. Per le competenze richieste dall'elaborato, lo schema da noi riportato e implementato ha il solo scopo di illustrare le interazioni principali fra le varie parti, non \'e quindi atto ad una realizzazione concreta.  
+L'applicativo si presta per essere relalizzato ed opearare come un sistema distribuito, prevedendo cio\'e un server centrale con al suo interno dati comuni accessibili dai vari terminali attraverso un protocollo di comunicazione. Per le competenze richieste dall'elaborato, lo schema da noi riportato e implementato ha il solo scopo di illustrare le interazioni principali fra le varie parti, non \'e quindi atto ad una realizzazione concreta.  
 
 % insieme
+
+\newpage
 
 \subsection{Class Diagram}
 Qui di seguito riportiamo la realizzazione del Class Diagram che descrive la nostra logica di dominio in prospettiva di implementazione:
@@ -148,12 +174,13 @@ Il pattern Architetturale Model-View-Controller \'e utilizzato quando si ha la n
 
 \item View: Corrisponde alle varie interfacce dell'applicazione con cui gli utenti si possono trovare ad interagire per eseguire delle azioni sul sistema.
  
-\item Controller: Svolge il ruolo da mediatore fra il View e il Model, trasformando le interazioni dell'utente sul primo in azioni sul secondo. Per farlo sfrutta inoltre un meccanismo che prende il nome di business logic. Questo consiste nel mettere in vita determinati oggetti del Model solo nel momento del loro effettivo bisogno ossia quando devono interagire in risposta alle richieste del client.
+\item Controller: Svolge il ruolo da mediatore fra il View e il Model, trasformando le interazioni dell'utente sul primo in azioni sul secondo. Per farlo sfrutta inoltre un meccanismo che prende il nome di business logic. Questo consiste nel mettere in vita determinati oggetti del Model solo nel momento del loro effettivo bisogno, ossia quando devono interagire in risposta alle richieste del client.
 \end{itemize}
 
 \newpage
 
-Riportiamo di seguito l'architettura del nostro applicativo suddivisa nelle tre componenti sopra descritte:
+Nel nostro applicativo abbiamo sentito la necessit\'a di introdurre questo pattern in quanto i nostri attori interagiscono fra di loro e con il sistema al fine di scambiare dati e informazioni attraverso una molteplicit\'a di viste differenti. \\
+Riportiamo quindi di seguito l'architettura del nostro applicativo suddivisa nelle tre componenti sopra descritte:
 
 \begin{figure}[!h]
 \centering
