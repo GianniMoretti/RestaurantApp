@@ -68,14 +68,14 @@ Riportiamo di seguito i template relativi ad alcuni dei pricipali casi d'uso ind
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width= 10cm, height= 6cm]{"Immagini/CreateComposedTable.PNG"}
-\caption{Template che descrive il caso d'uso dell'organizzatore della sala per creare un tavolo composto}
+\includegraphics[width= 10cm, height= 6cm]{"Immagini/PlaceOrder.PNG"}
+\caption{Template che descrive il caso d'uso del cameriere per piazzare un ordine ad un servizio al tavolo}
 \end{figure}
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width= 10cm, height= 6cm]{"Immagini/PlaceOrder.PNG"}
-\caption{Template che descrive il caso d'uso del cameriere per piazzare un ordine ad un servizio al tavolo}
+\includegraphics[width= 10cm, height= 6cm]{"Immagini/CreateComposedTable.PNG"}
+\caption{Template che descrive il caso d'uso dell'organizzatore della sala per creare un tavolo composto}
 \end{figure}
 
 \newpage
@@ -85,8 +85,6 @@ Riportiamo di seguito i template relativi ad alcuni dei pricipali casi d'uso ind
 \includegraphics[width= 10cm, height= 3.5cm]{"Immagini/GetBill.PNG"}
 \caption{Template che descrive il caso d'uso del cassiere per calcolare il conto di un servizio al tavolo}
 \end{figure}
-
-% betta
 
 \subsection{Mockups}
 Riportiamo di seguito dei possibili mockups relativi alle interfaccie grafiche della nostra app per l'interazione con i nostri attori.
@@ -132,7 +130,7 @@ Qui di seguito riportiamo la realizzazione del Class Diagram che descrive la nos
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width= 15cm, height= 11cm]{"Immagini/ClassDiagram.PNG"}
+\includegraphics[width= 15cm, height= 10cm]{"Immagini/ClassDiagram.PNG"}
 \caption{Class Diagram}
 \label{ClassDiagram}
 \end{figure}
@@ -140,9 +138,197 @@ Qui di seguito riportiamo la realizzazione del Class Diagram che descrive la nos
 \newpage
 
 \subsection{Classi ed Interfacce}
-Per l'implementazione del nostro applicativo abbiamo sia definito nuove classi ed interfacce specifiche per il nostro progetto, sia utilizzato alcune di quelle gi\'a presenti nelle librerie standard di Java. Le principali classi contenute nel package ... 
+Per l'implementazione del nostro applicativo abbiamo sia definito nuove classi ed interfacce specifiche, sia utilizzato alcune di quelle gi\'a presenti nelle librerie standard di Java. \\
+Le classi Controller sotto riportate vengono create al momento del login di un client nella relativa interfaccia grafica, sono una per ciascun attore e vengono utilizzate nei seguenti modi: 
 
-% gianni
+\subsubsection{WaiterPageController}
+
+Tramite questo controller, il cameriere può inserire nuovi ordini relativi ad un determinato tavolo utilizzando il metodo \textit{placeOrderToTableService(Order order, int id)}, oppure creare un nuovo TableService con il metodo \textit{openTableService(int id, TableServiceRecord record)} indicando il tavolo interessato.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width= 12cm, height= 7cm]{"Codice/WaiterPageController.PNG"}
+\caption{Porzione di codice della classe WaiterPageController}
+\end{figure}
+
+
+\subsubsection{HallOraganizatorPageController}
+
+\'E un controller che permette di organizzare i tavoli presenti nella sala. Al suo interno contiene la lista di tavoli fisici. \'E possibile creare nuovi tavoli composti attraverso il metodo  \textit{createComposedTable(int id, int[] IDs)} specificando gli id dei tavoli fisici da utilizzare. Il tavolo composto creato viene direttamente inserito all'interno del "TableContainer".
+\textit{setTablesUnusable(int[] IDs)} ci permette invece di impostare lo stato dei tavoli, specificati con id, nello stato di "Unusable".
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width= 12cm, height= 7cm]{"Codice/HallPage1.PNG"}
+\caption{Porzione di codice della classe HallOrganizatorPageController}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width= 12cm, height= 5.5cm]{"Codice/HallPage2.PNG"}
+\caption{Porzione di codice della classe HallOrganizatorPageController}
+\end{figure}
+
+\newpage
+
+\subsubsection{CashierPageController}
+
+Questo controller viene utilizzato dall'interfaccia del cassiere per calcolare il conto relativo ad un servizio al tavolo utilizzando \textit{getBill(int id)}.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width= 12cm, height= 6cm]{"Codice/CassierePage.PNG"}
+\caption{Porzione di codice della classe CashierPageController}
+\end{figure}
+
+\newpage
+
+\subsubsection{RestaurantManagerPageController}
+
+Viene utilizzato per la gestione del "Men\'u" e dei "TableServiceRecord" da parte del manager del ristorante. Al suo interno sono presenti metodi per la gestione del men\'u, ad esempio \textit{addDish(Dish dish)} e \textit{removeDish(Dish dish)} per aggiungere e rimuovere un piatto rispettivamente. Inoltre il manager del ristorante ha la possibilità di cancellare dei "TableServiceRecord" relativi ad una data con \textit{deleteTableServiceRecords(LocalDate date)} o di visionarli con \textit{getTableServiceRecords(LocalDate date)}.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width= 12cm, height= 4.5cm]{"Codice/ManagerPage.PNG"}
+\caption{Porzione di codice della classe RestaurantManagerPageController}
+\end{figure}
+
+\newpage
+
+
+\subsubsection{OrderPageController, BarController, KitchenController e PizzeriaController}
+
+"OrderPageController" \'e una classe astratta che abbiamo creato per definire i metodi necessari ai controller specifici della cucina: "BarController", "KitchenController" e "PizzeriaController". Questi ultimi, infatti, la implementano e definiscono al loro interno il metodo astratto \textit{getOrder(Order order)} in modo tale da prendere soltanto gli "OrderRecord" a cui sono interessati. Inoltre "OrderPageController" implementa l'interfaccia "Observer" del package java.util cos\'i da poter essere avvisata dall' "OrderManager" ("Observable") quando vengono piazzati nuovi ordini e tramite il metodo \textit{update(Observable ordermanager, Object order)} aggiornare automaticamente la lista dei suoi "OrderRecord" (Vedi Sezione Observer $3.4.1 $).
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width= 12cm, height= 4.5cm]{"Codice/OrderPage.PNG"}
+\caption{Porzione di codice della classe OrderPageController}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width= 12cm, height= 6cm]{"Codice/PizzeriaPage.PNG"}
+\caption{Porzione di codice della classe PizzeriaController}
+\end{figure}
+
+\newpage
+
+\noindent Di seguito riportiamo la descrizione di alcune delle classi principali appartenenti alla parte di Domain Model del nostro progetto: 
+
+\subsubsection{ComposedTable e PhisicalTable}
+
+I "PhisicalTable" rappresentano i tavoli presenti all'interno del locale, vengono identificati tramite un id e \textit{setAvailable(boolean available)} permette di renderli utilizzabili o non utilizzabili.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width= 9cm, height= 3cm]{"Codice/PhisicalTable.PNG"}
+\caption{Porzione di codice della classe PhisicalTable}
+\end{figure}
+
+
+\noindent "ComposedTable" \'e un tavolo composto da un insieme di "PhisicalTable" e viene identificato, anche lui, con un id. Il metodo \textit{addTable(PhisicalTable pt)} permette di aggiungere un "PhisicalTable" al suo interno. Inoltre, è possibile assegnargli un "TableState" per contassegnare lo stato in cui si trova.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width= 12cm, height= 6.5cm]{"Codice/ComposedTable.PNG"}
+\caption{Porzione di codice della classe Composed}
+\end{figure}
+
+\subsubsection{TableContainer}
+
+Contiene tutti i "ComposedTable" creati dall'orgabizzatore della sala in una lista al suo interno. Permette di aggiungere, eliminare o cambaire lo stato ai tavoli composti con i metodi \textit{addTable(ComposedTable table)}, \textit{deleteTable(int id)} e \textit{setComposedTableAvailable(int id)}.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width= 7cm, height= 4cm]{"Codice/TableContainer1.PNG"}
+\caption{Porzione di codice della classe TableContainer}
+\end{figure}
+
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width= 7cm, height= 4.5cm]{"Codice/TableContainer2.PNG"}
+\caption{Porzione di codice della classe TableContainer}
+\end{figure}
+
+\newpage
+
+\subsubsection{TableService}
+
+"TableService" \'e una classe che raggruppa al suo interno tutte le informazioni inerenti al servizio di un tavolo. Al suo interno troviamo infatti: lista degli ordini piazzati, "TableServiceRecord", il "ComposedTable" a cui \'e associato e il cameriere che lo ha creato e sta effettuando il servizio.
+
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width= 9cm, height= 2cm]{"Codice/TableService.PNG"}
+\caption{Porzione di codice della classe TableService}
+\end{figure}
+
+\subsubsection{TableServiceContainer}
+
+Contiene tutti i "TableService" creati dai camerieri. Permette di gestire i "TableService" contenuti al suo interno con diversi metodi come, ad esempio, \textit{addTableService(TableService tableService)} per aggiungere un TableService o \textit{placeOrderToTableService(Order order, int id)} per aggiunge un ordine al TableService del tavolo id.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width= 14cm, height= 7cm]{"Codice/TableServiceContainer.PNG"}
+\caption{Porzione di codice della classe TableServiceContainer}
+\end{figure}
+
+\newpage
+
+\subsubsection{OrderRecord}
+
+Questo classe viene utilizzata per inserire i piatti del men\'u nelle comande e, inoltre, rende possibile l'aggiunta di un commento o la rimozione/aggiunta di ingredienti al piatto. All'interno si trovano infatti due liste di "Ingredients", una contenente gli ingredienti aggiunti "ArrayList<Ingredient> addedIngredients" e l'altra gli ingredienti rimossi "ArrayList<Ingredient> removedIngredients". Attraverso il metodo \textit{getPrice()} calcola il prezzo del piatto corrispondente sommando e sottraendo il prezzo degli ingredienti rispettivamente aggiunti e rimossi. Ogni "OrderRecord" è identificato da un id, lo stesso dell' "Order" che lo contiene.
+
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width= 14cm, height= 7cm]{"Codice/OrderRecord.PNG"}
+\caption{Porzione di codice della classe OrderRecord}
+\end{figure}
+
+\newpage
+
+\subsubsection{OrderManager}
+
+Si occupa della gestione degli ordini. Al suo interno è presente una lista di ordini e con il metodo \textit{addOrder(Order order)} se ne possono aggiungere di nuovi. "OrderManager" estende la classe astratta "Observable" del package java.util, cos\'i che ogni qualvolta venga aggiunto un nuovo "Order" alla lista venga richiamato \textit{notifyObservers(Object order)} che avvisa gli "Observer" ("OrderPageController") del nuovo ordine aggiunto (Vedi Sezione Observer $3.4.1 $). 
+
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width= 7.5cm, height= 5cm]{"Codice/OrderManager.PNG"}
+\caption{Porzione di codice della classe OrderManager}
+\end{figure}
+
+\subsubsection{RepositoryMenu e FakeMenuData}
+
+"RepositoryMenu" \'e un'interfaccia che espone tutti i metodi necessari per la gestione del "Men\'u" come, ad esempio, \textit{addDish(Dish dish)} e \textit{removeDish(Dish dish)}. Con \textit{getDishes()} e \textit{getIngredients()} \'e possibile ottenere le liste contenenti tutti i piatti e tutti gli ingredienti del men\'u. Grazie a questa interfaccia \'e possibile utilizzare diversi tipi di oggetti per lo storage di dati senza dover cambiare il codice che utilizza il men\'u, introducendo cos\'i un ulteriore livello di astrazione.
+
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width= 9cm, height= 3cm]{"Codice/RepositoryMenu.PNG"}
+\caption{Porzione di codice della classe RepositoryMenu}
+\end{figure}
+
+\newpage
+
+\noindent "FakeMenuData" implementa "RepositoryMenu" ed \'e stato creato per avere un oggetto di storage fittizzio che ci permettesse di eseguire i test senza dover implementare sul momento piatti e ingredienti.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width= 9cm, height= 3.5cm]{"Codice/FakeMenuData1.PNG"}
+\caption{Porzione di codice della classe FakeMenuData}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width= 11cm, height= 6.5cm]{"Codice/FakeMenuData2.PNG"}
+\caption{Porzione di codice della classe FakeMenuData}
+\end{figure}
+
+\newpage
 
 \subsection{Design Patterns}
 Nella realizzazione del nostro progetto ci siamo imbattuti in delle situazioni dove \'e emersa la necessit\'a di introdurre dei design patterns noti al fine di gestirle in modo agile ed elegante. I patterns utilizzati nel nostro applicativo sono: 
@@ -156,14 +342,14 @@ Nella realizzazione del nostro progetto ci siamo imbattuti in delle situazioni d
 \subsubsection{Observer}
 
 Il pattern Comportamentale Observer \'e utilizzato per notificare ad uno o pi\'u oggetti che svolgono il ruolo di osservatori quando un altro elemento osservato varia il suo stato di interesse. \\
-Nella nostra logica di dominio abbiamo avuto la necessit\'a di introdurre questo pattern per notificare alla cucina l'invio da parte del cameriere di una nuova comanda presa a un tavolo. Nonostante siano state deprecate, per implementare il pattern Observer ci siamo serviti delle classi "Observable" e "Observer" e dei loro rispettivi metodi "notify" e "update" forniti dalla libreria java.util. Abbiamo inoltre deciso di implementare il pattern Observer in modalit\'a push, la quale prevede che l'oggetto osservato notifichi gli osservatori inviando direttamente il cambiamento al momento della sua variazione. \\ Come \'e possibile infatti apprezzare dal Class Diagram di Figura \ref{ClassDiagram}, la classe Order Manager svolge il ruolo di oggetto osservato (Observable) che notifica l'arrivo di una nuova comanda inviandola direttamente alla cucina, alla pizzeria e al bar che svolgono il ruolo di osservatori (Observer). Questo avviene attraverso il metodo "addOrder" che preso come parametro il nuovo ordine piazzato dal cameriere lo invia agli Observers attraverso il metodo "notify", questi ultimi aggiorneranno poi il loro stato attraverso il metodo "update" (Vedi Sequence Diagram in Figura \ref{SequenceDiagram}).
+Nella nostra logica di dominio abbiamo avuto la necessit\'a di introdurre questo pattern per notificare alla cucina l'invio da parte del cameriere di una nuova comanda presa a un tavolo. Nonostante siano state deprecate, per implementare il pattern Observer ci siamo serviti delle classi "Observable" e "Observer" e dei loro rispettivi metodi \textit{notifyObservers(Object)} e \textit{update(Observable, Object)} forniti dalla libreria java.util. Abbiamo inoltre deciso di implementare il pattern Observer in modalit\'a push, la quale prevede che l'oggetto osservato notifichi gli osservatori inviando direttamente il cambiamento al momento della sua variazione. \\ Come \'e possibile infatti apprezzare dal Class Diagram di Figura \ref{ClassDiagram}, la classe "OrderManager" svolge il ruolo di oggetto osservato ("Observable") che notifica l'arrivo di una nuova comanda inviandola direttamente alla cucina, alla pizzeria e al bar che svolgono il ruolo di osservatori ("Observer"). Questo avviene attraverso il metodo \textit{addOrder(Order order)} che preso come parametro il nuovo ordine piazzato dal cameriere lo invia agli "Observers" attraverso il metodo \textit{notifyObservers(Object)}. Questi ultimi aggiorneranno poi il loro stato attraverso il metodo \textit{update(Observable, Object)} (Vedi Sequence Diagram in Figura \ref{SequenceDiagram}).
 
 \newpage
 
 \subsubsection{Singleton}
 
 Il pattern Creazionale Singleton \'e utilizzato per avere un'unica istanza di una determinata classe. \\
-Nel nostro progetto abbiamo infatti introdotto questo pattern per garantire l'unicit\'a delle istanze delle classi "TableContainer", "TableServiceContainer" e "OrderManager", le quali interagiscono con pi\'u attori e classi e si ha quindi la necessit\'a che siano sempre le stesse. Come \'e possibile osservare nel Sequence Diagram di Figura \ref{SequenceDiagram}, gli attori non possiedono i riferimenti a l'unica instanza di queste classi, ma li ottengono al momento che necessitano di utilizzarle attraverso il rispettivo metodo "getInstance".
+Nel nostro progetto abbiamo infatti introdotto questo pattern per garantire l'unicit\'a delle istanze delle classi "TableContainer", "TableServiceContainer" e "OrderManager", le quali interagiscono con pi\'u attori e classi e si ha quindi la necessit\'a che siano sempre le stesse. Come \'e possibile osservare nel Sequence Diagram di Figura \ref{SequenceDiagram}, gli attori non possiedono i riferimenti a l'unica instanza di queste classi, ma li ottengono al momento che necessitano di utilizzarle attraverso il rispettivo metodo \textit{getInstance()}.
 
 \subsubsection{MVC}
 
@@ -179,7 +365,7 @@ Il pattern Architetturale Model-View-Controller \'e utilizzato quando si ha la n
 
 \newpage
 
-Nel nostro applicativo abbiamo sentito la necessit\'a di introdurre questo pattern in quanto i nostri attori interagiscono fra di loro e con il sistema al fine di scambiare dati e informazioni attraverso una molteplicit\'a di viste differenti. \\
+\noindent Nel nostro applicativo abbiamo sentito la necessit\'a di introdurre questo pattern in quanto i nostri attori interagiscono fra di loro e con il sistema al fine di scambiare dati e informazioni attraverso una molteplicit\'a di viste differenti. \\
 Riportiamo quindi di seguito l'architettura del nostro applicativo suddivisa nelle tre componenti sopra descritte:
 
 \begin{figure}[!h]
@@ -198,15 +384,76 @@ Riportiamo quindi di seguito l'architettura del nostro applicativo suddivisa nel
 \caption{Raffigurazione della disposizione delle classi del progetto nei package}
 \end{figure}
 
-\section{UnitTest e flusso di controllo}
-\subsection{Unit Test}
-Per testare la corretta interazione e collabborazione fra le parti abbiamo deciso di eseguire i seguenti test sui principali casi d'uso dei nostri attori...
+\newpage
 
-% betta
+\section{UnitTest}
+Per testare la corretta interazione e collabborazione fra le parti abbiamo realizzato i seguenti test cases per alcune delle classi principali dell’applicativo: \\
+\newline
+Nel progetto è stato utilizzato il framework JUnit 5.0.
+
+\subsection{WaiterPageControllerTest}
+
+Nella seguente classe di test, è stata testato il controller del cameriere. In particolare dopo aver istanziato alcuni tavoli composti, vengono testate le funzioni \textit{openTableService(int, TableServiceRecord)} e \textit{placeOrderToTableService(Order, int)}. Ciò che ci ha spinto a scegliere questo test, \'e stato il fatto questi metodi sono tra i pi\'u essenziali tra quelli che stanno dietro la logica dell’applicativo.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width= 12cm, height= 6.5cm]{"Codice/TestCameriere.PNG"}
+\caption{Porzione di codice del test case del cameriere}
+\end{figure}
 
 \newpage
 
-\subsection{Sequence Diagram}
+\subsection{RestaurantManagerPageControllerTest}
+
+Il manager del ristorante può gestire i dati relativi ai clienti e il men\'u. Nella classe di test sottostante ci siamo concentrati sui metodi che visualizzano e cancellano i dati dei clienti. Gli altri metodi relativi al men\'u non li abbiamo testati per due ragioni principali: la prima è che non è presente un database sottostante implementato, la seconda \'e che sono analoghi ai precedenti.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width= 11cm, height= 4cm]{"Codice/TestManager.PNG"}
+\caption{Porzione di codice del test case del manager del ristorante}
+\end{figure}
+
+\subsection{CashierPageControllerTest}
+
+Il controller del cassiere pu\'o calcolare il conto associato ad un servizio al tavolo. Nella classe di test sottostante è stato testato il corretto funzionamento del metodo \textit{getBill(int)}. In particolare vengono istanziati alcuni ordini associati a due diversi servizi al tavolo. Sono presenti piatti con ingredienti aggiunti e rimossi e ordini di storno. Quello che il cassiere deve controllare è che vengano calcolati i conti in modo corretto e che lo stato dei tavoli venga messo a "DA PULIRE".
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width= 12cm, height= 4cm]{"Codice/TestCashier.PNG"}
+\caption{Porzione di codice del test case del cassiere}
+\end{figure}
+
+\newpage
+
+\subsection{HallOrganizatorPageController}
+
+Nella seguente classe di test, abbiamo testato tutti i metodi principali del controller dell’organizzatore della sala. In particolare dopo aver istanziato alcuni tavoli fisici, viene verificato il corretto funzionamento dei metodi \textit{createComposedTable(int,int[]), deleteComposedTable(int), setComposedTableAvailable(int)} e \textit{setTablesUnusable(int[])}. La ragione che ci ha spinto ad effettuare questi test \'e, ancora una volta, il fatto che questi metodi sono tra i pi\'u essenziali tra quelli che stanno dietro la logica dell’applicativo.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width= 12cm, height= 6.5cm]{"Codice/TestHall1.PNG"}
+\caption{Porzione di codice del test case dell'organizzatore della sala}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width= 12cm, height= 4.5cm]{"Codice/TestHall2.PNG"}
+\caption{Porzione di codice del test case dell'organizzatore della sala}
+\end{figure}
+
+\subsection{OrderPageControllerTest}
+
+Nella seguente classe di test viene testato il corretto funzionamento del pattern Observer. In particolare vengono creati due ordini, di cui uno di storno, che vengono piazzati da un cameriere su un servizio al tavolo. Il test va a controllare che i controller della cucina, della pizzeria e del ristorante siano stati aggiornati correttamente a seguito del piazzamento degli ordini. Successivamente viene piazzato un ulteriore ordine per controllare che i controller vengano aggiornati nel modo giusto.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width= 10cm, height= 6.25cm]{"Codice/TestOrder.PNG"}
+\caption{Porzione di codice del test case della cucina}
+\end{figure}
+
+\newpage
+
+\section{Sequence Diagram}
 Di seguito riportiamo un possibile scenario di interazione dei nostri attori:
 
 \begin{figure}[!h]
