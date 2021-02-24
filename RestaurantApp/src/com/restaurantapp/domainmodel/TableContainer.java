@@ -1,12 +1,13 @@
 package com.restaurantapp.domainmodel;
 import java.util.ArrayList;
 
+/*
+ * Il cameriere prende un riferimento ad un composed table
+ * Il cassiere mette i tavoli in stato DA PULIRE, ma non li distrugge
+ * L'hall organizator gestisce creazione e distruzione dei tavoli
+ */
+
 public class TableContainer {
-	/*
-	 * Il cameriere prende un riferimento ad un composed table
-	 * Il cassiere mette i tavoli in stato DA PULIRE, ma non li distrugge
-	 * L'hall organizator gestisce creazione e distruzione dei tavoli
-	 */
 
 	private static TableContainer instance=null;
 	private ArrayList<ComposedTable> tables;

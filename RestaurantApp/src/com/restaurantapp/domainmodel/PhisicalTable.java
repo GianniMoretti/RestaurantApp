@@ -7,6 +7,10 @@ public class PhisicalTable {
 	public PhisicalTable(int tableID) {
 		this.tableID = tableID;
 	}
+	
+	public void setAvailable(boolean available) {
+		this.available = available;
+	}
 
 	public int getTableID() {
 		return tableID;
@@ -18,10 +22,6 @@ public class PhisicalTable {
 
 	public boolean isAvailable() {
 		return available;
-	}
-
-	public void setAvailable(boolean available) {
-		this.available = available;
 	}
 
 }
