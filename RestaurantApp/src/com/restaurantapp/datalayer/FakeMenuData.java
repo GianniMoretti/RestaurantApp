@@ -1,7 +1,11 @@
-package com.restaurantapp.domainmodel;
+package com.restaurantapp.datalayer;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import com.restaurantapp.domainmodel.Dish;
+import com.restaurantapp.domainmodel.Ingredient;
+import com.restaurantapp.domainmodel.KindOfDish;
 
 public class FakeMenuData implements RepositoryMenu {
 	
@@ -105,4 +109,5 @@ public class FakeMenuData implements RepositoryMenu {
 		
 		
 	}
+
 }

@@ -1,6 +1,9 @@
-package com.restaurantapp.domainmodel;
+package com.restaurantapp.datalayer;
 
 import java.util.ArrayList;
+
+import com.restaurantapp.domainmodel.TableServiceRecord;
+
 import java.time.LocalDate;
 
 public interface RepositoryTableRecord {

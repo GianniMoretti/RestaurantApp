@@ -10,9 +10,9 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import com.restaurantapp.domainmodel.FakeMenuData;
-import com.restaurantapp.domainmodel.FakeTableRecord;
-import com.restaurantapp.domainmodel.RepositoryTableRecord;
+import com.restaurantapp.datalayer.FakeMenuData;
+import com.restaurantapp.datalayer.FakeTableRecord;
+import com.restaurantapp.datalayer.RepositoryTableRecord;
 import com.restaurantapp.domainmodel.TableServiceRecord;
 
 class RestaurantManagerPageControllerTest {

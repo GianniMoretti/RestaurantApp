@@ -2,6 +2,8 @@ package com.restaurantapp.domainmodel;
 
 import java.util.ArrayList;
 
+import com.restaurantapp.datalayer.RepositoryMenu;
+
 /*
  * Creato dall'interfaccia del cameriere al momento del login
  * Pigiando pulsante che rappresenta piatto nel menu

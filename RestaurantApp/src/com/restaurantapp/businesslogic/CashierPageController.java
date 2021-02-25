@@ -1,6 +1,6 @@
 package com.restaurantapp.businesslogic;
 
-import com.restaurantapp.domainmodel.RepositoryTableRecord;
+import com.restaurantapp.datalayer.RepositoryTableRecord;
 import com.restaurantapp.domainmodel.TableService;
 import com.restaurantapp.domainmodel.TableServiceContainer;
 import com.restaurantapp.domainmodel.TableServiceRecord;

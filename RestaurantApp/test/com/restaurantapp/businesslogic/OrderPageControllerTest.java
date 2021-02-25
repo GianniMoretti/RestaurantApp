@@ -9,9 +9,9 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import com.restaurantapp.datalayer.FakeMenuData;
 import com.restaurantapp.domainmodel.ComposedTable;
 import com.restaurantapp.domainmodel.Dish;
-import com.restaurantapp.domainmodel.FakeMenuData;
 import com.restaurantapp.domainmodel.Menu;
 import com.restaurantapp.domainmodel.Order;
 import com.restaurantapp.domainmodel.OrderManager;

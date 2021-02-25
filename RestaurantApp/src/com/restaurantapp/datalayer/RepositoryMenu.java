@@ -1,6 +1,9 @@
-package com.restaurantapp.domainmodel;
+package com.restaurantapp.datalayer;
 
 import java.util.ArrayList;
+
+import com.restaurantapp.domainmodel.Dish;
+import com.restaurantapp.domainmodel.Ingredient;
 
 public interface RepositoryMenu {
 
