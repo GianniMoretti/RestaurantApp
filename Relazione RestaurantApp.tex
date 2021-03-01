@@ -48,9 +48,22 @@ L'applicativo ha lo scopo di gestire le varie parti che compongono un ristorante
 
 \subsection{Possibili aggiunte}
 
-Delle possibili aggiunte non implementate potrebbero essere quelle di consentire al cliete di fare degli ordini da casa attraverso un sistema di consegna a domicilio (Es: Delivero) oppure quella di consenire all'organizzatore della sala di poter gestire le prenotazioni future dei clienti attraverso app. Login dei vari dipendenti. 
+Nonostante non siano state implementate, riportiamo di seguito delle possibili aggiunte per il nostro applicativo:
 
-% Insieme
+\begin{itemize}
+\item Ordini a domicilio o da asporto
+\item Prenotazioni dei tavoli
+\item Login dei vari dipendenti
+\end{itemize}
+
+\subsubsection{Ordini a domicilio o da asporto}
+L'applicazione potrebbe consentire di effettuare ordini da casa attraverso un sistema di consegna a domicilio oppure per l'asporto. Gli ordini verrebbero aggiunti direttamente all' ``OrderManager" che provvederebbe a smistarli alle cucine. Al fine di diversificare gli ordini fatti da casa da quelli presi ai tavoli, emergerebbe la necessit\`a di un nuovo attributo alla classe ``Order" denominato ``takeAway". In base al valore di questo attributo le cucine saprebbero come gestire gli ordini.  
+
+\subsubsection{Prenotazioni dei tavoli}  
+L'organizzatore della sala potrebbe gestire le prenotazioni fatte dai clienti. Questo \`e realizzabile attraverso un database contenente le prenotazioni ricevute. L'orga-\\nizzatore della sala avrebbe la possibilit\`a di scrivere e leggere le prenotazioni relative ad una certa data al fine di poter organizzare la sala di conseguenza.
+
+\subsubsection{Login dei vari dipendenti}
+Al momento del login i dati inseriti verrebbero confrontati con quelli presenti all'interno di un database. Solo se i dati trovano una corrispondenza l'applicazione consentirebbe di accedere alla pagina richiesta. Il manager del ristorante sarebbe in grado di aggiungere e rimuovere le credenziali dei vari dipendenti a sua discrezione per regolamentare i ruoli.
 
 \newpage
 
@@ -123,9 +136,9 @@ Riportiamo di seguito dei possibili mockups relativi alle interfaccie grafiche d
 
 \section{Progettazione e Implementazione}
 \subsection{Scelte implementative e considerazioni}
-L'applicativo si presta per essere realizzato ad operare come un sistema distribuito, prevedendo cio\`e un server centrale con al suo interno dati comuni accessibili dai vari terminali attraverso un protocollo di comunicazione. Per le competenze richieste dall'elaborato, lo schema da noi riportato e implementato ha il solo scopo di illustrare le interazioni principali fra le varie parti, non \`e quindi atto ad una realizzazione concreta.  
-
-% insieme
+Per implementare il nostro progetto in linguaggio Java ed eseguire i test ci siamo serviti dell'IDE Eclipse. Al fine di semplificare la collaborazione abbiamo utilizzato GitHub come stumento di versionamento del codice. Per quanto riguarda il Class Diagram, l'Use Case Diagram, il Sequance Diagram e lo schema architetturale in packages ci siamo serviti del software StarUML. \\
+Per le competenze richieste dall'elaborato, lo schema da noi riportato e implementato ha il solo scopo di illustrare le interazioni principali fra le varie parti, non \`e quindi atto ad una realizzazione concreta. L'applicativo si presta, infatti, per essere realizzato ad operare come un sistema distribuito, prevedendo cio\`e un server centrale con al suo interno dati comuni accessibili dai vari terminali attraverso un protocollo di comunicazione.
+Ad esempio, l'applicativo in esecuzione sul tablet del cameriere mostrerebbe l'interfaccia collegata al WaiterPageController che dialogherebbe con un server tramite delle classi che permettono tale comunicazione. In questo modo il client cameriere sarebbe in grado di aggiungere dei ``TableService" al ``TableServiceContainer" che si troverebbe all'interno del server comune.  
 
 \newpage
 
