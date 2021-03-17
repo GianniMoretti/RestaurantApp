@@ -1,0 +1,445 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.2.18)  17 MAR 2021 18:32
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**"Relazione RestaurantApp.tex"
+(./Relazione RestaurantApp.tex
+LaTeX2e <2020-02-02> patch level 2
+L3 programming layer <2020-02-14>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count167
+\c@section=\count168
+\c@subsection=\count169
+\c@subsubsection=\count170
+\c@paragraph=\count171
+\c@subparagraph=\count172
+\c@figure=\count173
+\c@table=\count174
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen135
+\Gin@req@width=\dimen136
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2019/11/10 v1.5r LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks17
+\verbatim@line=\toks18
+\verbatim@in@stream=\read2
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count175
+\l__pdf_internal_box=\box45
+)
+(./Relazione RestaurantApp.aux)
+\openout1 = `"Relazione RestaurantApp.aux"'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count176
+\scratchdimen=\dimen137
+\scratchbox=\box46
+\nofMPsegments=\count177
+\nofMParguments=\count178
+\everyMPshowfont=\toks19
+\MPscratchCnt=\count179
+\MPscratchDim=\dimen138
+\MPnumerator=\count180
+\makeMPintoPDFobject=\count181
+\everyMPtoPDFconversion=\toks20
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 15.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 15.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 15.
+<Immagini/LogoUnifi.PNG, id=1, 1204.5pt x 1304.875pt>
+File: Immagini/LogoUnifi.PNG Graphic file (type png)
+<use Immagini/LogoUnifi.PNG>
+Package pdftex.def Info: Immagini/LogoUnifi.PNG  used on input line 19.
+(pdftex.def)             Requested size: 113.80379pt x 113.80992pt.
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Immagini/LogoUnifi.png>]
+ (./Relazione RestaurantApp.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 2.
+)
+\tf@toc=\write3
+\openout3 = `"Relazione RestaurantApp.toc"'.
+
+ [2] [3]
+Overfull \hbox (5.63026pt too wide) in paragraph at lines 63--64
+\OT1/cmr/m/n/10 L'organizzatore della sala potrebbe ge-stire le preno-tazioni f
+atte dai cli-enti. Questo
+ []
+
+
+Overfull \hbox (6.01923pt too wide) in paragraph at lines 66--67
+\OT1/cmr/m/n/10 all'interno di un database. Solo se i dati trovano una cor-risp
+on-denza l'applicazione
+ []
+
+[4]
+<Immagini/UseCaseDiagram.PNG, id=24, 1112.155pt x 911.405pt>
+File: Immagini/UseCaseDiagram.PNG Graphic file (type png)
+<use Immagini/UseCaseDiagram.PNG>
+Package pdftex.def Info: Immagini/UseCaseDiagram.PNG  used on input line 77.
+(pdftex.def)             Requested size: 426.79134pt x 349.75859pt.
+
+Overfull \hbox (81.79134pt too wide) in paragraph at lines 77--78
+ [][] 
+ []
+
+[5 <./Immagini/UseCaseDiagram.png>]
+<Immagini/PlaceOrder.PNG, id=29, 575.14874pt x 378.213pt>
+File: Immagini/PlaceOrder.PNG Graphic file (type png)
+<use Immagini/PlaceOrder.PNG>
+Package pdftex.def Info: Immagini/PlaceOrder.PNG  used on input line 88.
+(pdftex.def)             Requested size: 284.52756pt x 187.10924pt.
+<Immagini/CreateComposedTable.PNG, id=30, 566.71725pt x 268.00125pt>
+File: Immagini/CreateComposedTable.PNG Graphic file (type png)
+<use Immagini/CreateComposedTable.PNG>
+Package pdftex.def Info: Immagini/CreateComposedTable.PNG  used on input line 9
+4.
+(pdftex.def)             Requested size: 284.52756pt x 134.55644pt.
+ [6 <./Immagini/PlaceOrder.png> <./Immagini/CreateComposedTable.png>]
+<Immagini/GetBill.PNG, id=36, 567.3195pt x 163.812pt>
+File: Immagini/GetBill.PNG Graphic file (type png)
+<use Immagini/GetBill.PNG>
+Package pdftex.def Info: Immagini/GetBill.PNG  used on input line 102.
+(pdftex.def)             Requested size: 284.52756pt x 82.15575pt.
+<Immagini/HomePage.PNG, id=37, 786.68906pt x 481.04718pt>
+File: Immagini/HomePage.PNG Graphic file (type png)
+<use Immagini/HomePage.PNG>
+Package pdftex.def Info: Immagini/HomePage.PNG  used on input line 111.
+(pdftex.def)             Requested size: 284.52756pt x 173.98427pt.
+ [7 <./Immagini/GetBill.png> <./Immagini/HomePage.PNG>]
+<Immagini/WaiterLogin.PNG, id=44, 788.19469pt x 482.55281pt>
+File: Immagini/WaiterLogin.PNG Graphic file (type png)
+<use Immagini/WaiterLogin.PNG>
+Package pdftex.def Info: Immagini/WaiterLogin.PNG  used on input line 119.
+(pdftex.def)             Requested size: 284.52756pt x 174.19011pt.
+<Immagini/HallOrganizatorPage.PNG, id=45, 786.68906pt x 481.04718pt>
+File: Immagini/HallOrganizatorPage.PNG Graphic file (type png)
+<use Immagini/HallOrganizatorPage.PNG>
+Package pdftex.def Info: Immagini/HallOrganizatorPage.PNG  used on input line 1
+25.
+(pdftex.def)             Requested size: 284.52756pt x 173.98427pt.
+ [8 <./Immagini/WaiterLogin.PNG> <./Immagini/HallOrganizatorPage.PNG>]
+<Immagini/OrdineCameriere.PNG, id=51, 786.68906pt x 481.04718pt>
+File: Immagini/OrdineCameriere.PNG Graphic file (type png)
+<use Immagini/OrdineCameriere.PNG>
+Package pdftex.def Info: Immagini/OrdineCameriere.PNG  used on input line 133.
+(pdftex.def)             Requested size: 284.52756pt x 173.98427pt.
+
+[9 <./Immagini/OrdineCameriere.PNG>]
+<Immagini/ClassDiagram.PNG, id=56, 1371.1225pt x 823.075pt>
+File: Immagini/ClassDiagram.PNG Graphic file (type png)
+<use Immagini/ClassDiagram.PNG>
+Package pdftex.def Info: Immagini/ClassDiagram.PNG  used on input line 150.
+(pdftex.def)             Requested size: 426.79134pt x 256.19301pt.
+
+Overfull \hbox (81.79134pt too wide) in paragraph at lines 150--151
+ [][] 
+ []
+
+[10 <./Immagini/ClassDiagram.png>]
+<Codice/WaiterPageController.PNG, id=61, 927.465pt x 525.965pt>
+File: Codice/WaiterPageController.PNG Graphic file (type png)
+<use Codice/WaiterPageController.PNG>
+Package pdftex.def Info: Codice/WaiterPageController.PNG  used on input line 16
+7.
+(pdftex.def)             Requested size: 341.43306pt x 193.62488pt.
+<Codice/HallPage1.PNG, id=62, 884.30376pt x 656.4525pt>
+File: Codice/HallPage1.PNG Graphic file (type png)
+<use Codice/HallPage1.PNG>
+Package pdftex.def Info: Codice/HallPage1.PNG  used on input line 179.
+(pdftex.def)             Requested size: 341.43306pt x 253.4612pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<Codice/HallPage2.PNG, id=63, 908.39375pt x 400.49625pt>
+File: Codice/HallPage2.PNG Graphic file (type png)
+<use Codice/HallPage2.PNG>
+Package pdftex.def Info: Codice/HallPage2.PNG  used on input line 185.
+(pdftex.def)             Requested size: 341.43306pt x 150.53404pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[11 <./Codice/WaiterPageController.png>]
+<Codice/CassierePage.PNG, id=69, 888.31876pt x 456.70625pt>
+File: Codice/CassierePage.PNG Graphic file (type png)
+<use Codice/CassierePage.PNG>
+Package pdftex.def Info: Codice/CassierePage.PNG  used on input line 197.
+(pdftex.def)             Requested size: 341.43306pt x 175.53627pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[12 <./Codice/HallPage1.png> <./Codice/HallPage2.png>]
+<Codice/ManagerPage.PNG, id=75, 843.15pt x 313.17pt>
+File: Codice/ManagerPage.PNG Graphic file (type png)
+<use Codice/ManagerPage.PNG>
+Package pdftex.def Info: Codice/ManagerPage.PNG  used on input line 209.
+(pdftex.def)             Requested size: 341.43306pt x 126.8188pt.
+ [13 <./Codice/CassierePage.png> <./Codice/ManagerPage.png>]
+Overfull \hbox (9.30103pt too wide) in paragraph at lines 216--216
+[]\OT1/cmr/bx/n/10 OrderPageController, Bar-Con-troller, Kitchen-Con-troller e 
+Pizze-
+ []
+
+<Codice/OrderPage.PNG, id=82, 664.4825pt x 255.95625pt>
+File: Codice/OrderPage.PNG Graphic file (type png)
+<use Codice/OrderPage.PNG>
+Package pdftex.def Info: Codice/OrderPage.PNG  used on input line 222.
+(pdftex.def)             Requested size: 341.43306pt x 131.52016pt.
+<Codice/PizzeriaPage.PNG, id=83, 704.6325pt x 350.30875pt>
+File: Codice/PizzeriaPage.PNG Graphic file (type png)
+<use Codice/PizzeriaPage.PNG>
+Package pdftex.def Info: Codice/PizzeriaPage.PNG  used on input line 228.
+(pdftex.def)             Requested size: 341.43306pt x 169.74452pt.
+[14 <./Codice/OrderPage.png> <./Codice/PizzeriaPage.png>]
+<Codice/PhisicalTable.PNG, id=89, 524.96124pt x 231.86626pt>
+File: Codice/PhisicalTable.PNG Graphic file (type png)
+<use Codice/PhisicalTable.PNG>
+Package pdftex.def Info: Codice/PhisicalTable.PNG  used on input line 242.
+(pdftex.def)             Requested size: 256.0748pt x 113.10597pt.
+<Codice/ComposedTable.PNG, id=90, 652.4375pt x 392.46625pt>
+File: Codice/ComposedTable.PNG Graphic file (type png)
+<use Codice/ComposedTable.PNG>
+Package pdftex.def Info: Codice/ComposedTable.PNG  used on input line 251.
+(pdftex.def)             Requested size: 341.43306pt x 205.38911pt.
+ [15 <./Codice/PhisicalTable.png> <./Codice/ComposedTable.png>]
+<Codice/TableContainer1.PNG, id=96, 540.0175pt x 371.3875pt>
+File: Codice/TableContainer1.PNG Graphic file (type png)
+<use Codice/TableContainer1.PNG>
+Package pdftex.def Info: Codice/TableContainer1.PNG  used on input line 261.
+(pdftex.def)             Requested size: 199.16928pt x 136.97487pt.
+<Codice/TableContainer2.PNG, id=97, 548.0475pt x 416.55624pt>
+File: Codice/TableContainer2.PNG Graphic file (type png)
+<use Codice/TableContainer2.PNG>
+Package pdftex.def Info: Codice/TableContainer2.PNG  used on input line 268.
+(pdftex.def)             Requested size: 199.16928pt x 151.3839pt.
+ [16 <./Codice/TableContainer1.png> <./Codice/TableContainer2.png>]
+<Codice/TableService.PNG, id=103, 538.01pt x 120.45pt>
+File: Codice/TableService.PNG Graphic file (type png)
+<use Codice/TableService.PNG>
+Package pdftex.def Info: Codice/TableService.PNG  used on input line 281.
+(pdftex.def)             Requested size: 256.0748pt x 57.33012pt.
+<Codice/TableServiceContainer.PNG, id=104, 981.6675pt x 576.1525pt>
+File: Codice/TableServiceContainer.PNG Graphic file (type png)
+<use Codice/TableServiceContainer.PNG>
+Package pdftex.def Info: Codice/TableServiceContainer.PNG  used on input line 2
+91.
+(pdftex.def)             Requested size: 398.33858pt x 233.78883pt.
+
+Overfull \hbox (53.33858pt too wide) in paragraph at lines 291--292
+ [][] 
+ []
+
+[17 <./Codice/TableService.png> <./Codice/TableServiceContainer.png>]
+<Codice/OrderRecord.PNG, id=110, 1004.75375pt x 658.46pt>
+File: Codice/OrderRecord.PNG Graphic file (type png)
+<use Codice/OrderRecord.PNG>
+Package pdftex.def Info: Codice/OrderRecord.PNG  used on input line 304.
+(pdftex.def)             Requested size: 398.33858pt x 261.04837pt.
+
+Overfull \hbox (53.33858pt too wide) in paragraph at lines 304--305
+ [][] 
+ []
+
+[18 <./Codice/OrderRecord.png>]
+<Codice/OrderManager.PNG, id=116, 513.92pt x 470.75874pt>
+File: Codice/OrderManager.PNG Graphic file (type png)
+<use Codice/OrderManager.PNG>
+Package pdftex.def Info: Codice/OrderManager.PNG  used on input line 316.
+(pdftex.def)             Requested size: 213.39566pt x 195.47617pt.
+<Codice/RepositoryMenu.PNG, id=117, 572.1375pt x 214.8025pt>
+File: Codice/RepositoryMenu.PNG Graphic file (type png)
+<use Codice/RepositoryMenu.PNG>
+Package pdftex.def Info: Codice/RepositoryMenu.PNG  used on input line 327.
+(pdftex.def)             Requested size: 256.0748pt x 96.13908pt.
+ [19 <./Codice/OrderManager.png> <./Codice/RepositoryMenu.png>]
+<Codice/FakeMenuData1.PNG, id=124, 611.28375pt x 241.90375pt>
+File: Codice/FakeMenuData1.PNG Graphic file (type png)
+<use Codice/FakeMenuData1.PNG>
+Package pdftex.def Info: Codice/FakeMenuData1.PNG  used on input line 337.
+(pdftex.def)             Requested size: 256.0748pt x 101.3368pt.
+<Codice/FakeMenuData2.PNG, id=125, 721.69624pt x 614.295pt>
+File: Codice/FakeMenuData2.PNG Graphic file (type png)
+<use Codice/FakeMenuData2.PNG>
+Package pdftex.def Info: Codice/FakeMenuData2.PNG  used on input line 343.
+(pdftex.def)             Requested size: 312.9803pt x 266.40068pt.
+ [20 <./Codice/FakeMenuData1.png> <./Codice/FakeMenuData2.png>]
+[21] [22]
+<Immagini/Architecture.PNG, id=137, 1218.5525pt x 862.22125pt>
+File: Immagini/Architecture.PNG Graphic file (type png)
+<use Immagini/Architecture.PNG>
+Package pdftex.def Info: Immagini/Architecture.PNG  used on input line 395.
+(pdftex.def)             Requested size: 398.33858pt x 281.84998pt.
+
+Overfull \hbox (53.33858pt too wide) in paragraph at lines 395--396
+ [][] 
+ []
+
+[23 <./Immagini/Architecture.png>]
+<Immagini/Package.PNG, id=142, 239.6955pt x 581.7735pt>
+File: Immagini/Package.PNG Graphic file (type png)
+<use Immagini/Package.PNG>
+Package pdftex.def Info: Immagini/Package.PNG  used on input line 405.
+(pdftex.def)             Requested size: 128.0374pt x 310.77081pt.
+ [24 <./Immagini/Package.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 412--415
+
+ []
+
+<Codice/TestCameriere.PNG, id=147, 1194.4625pt x 664.4825pt>
+File: Codice/TestCameriere.PNG Graphic file (type png)
+<use Codice/TestCameriere.PNG>
+Package pdftex.def Info: Codice/TestCameriere.PNG  used on input line 422.
+(pdftex.def)             Requested size: 341.43306pt x 189.93713pt.
+[25 <./Codice/TestCameriere.png>]
+<Codice/TestManager.PNG, id=153, 1176.395pt x 313.17pt>
+File: Codice/TestManager.PNG Graphic file (type png)
+<use Codice/TestManager.PNG>
+Package pdftex.def Info: Codice/TestManager.PNG  used on input line 434.
+(pdftex.def)             Requested size: 398.33858pt x 106.04153pt.
+
+Overfull \hbox (53.33858pt too wide) in paragraph at lines 434--435
+ [][] 
+ []
+
+<Codice/TestCashier.PNG, id=154, 1213.53375pt x 212.795pt>
+File: Codice/TestCashier.PNG Graphic file (type png)
+<use Codice/TestCashier.PNG>
+Package pdftex.def Info: Codice/TestCashier.PNG  used on input line 444.
+(pdftex.def)             Requested size: 398.33858pt x 69.84915pt.
+
+Overfull \hbox (53.33858pt too wide) in paragraph at lines 444--445
+ [][] 
+ []
+
+[26 <./Codice/TestManager.png> <./Codice/TestCashier.png>]
+<Codice/TestHall1.PNG, id=160, 1170.3725pt x 552.0625pt>
+File: Codice/TestHall1.PNG Graphic file (type png)
+<use Codice/TestHall1.PNG>
+Package pdftex.def Info: Codice/TestHall1.PNG  used on input line 456.
+(pdftex.def)             Requested size: 398.33858pt x 187.8925pt.
+
+Overfull \hbox (53.33858pt too wide) in paragraph at lines 456--457
+ [][] 
+ []
+
+<Codice/TestHall2.PNG, id=161, 1129.21875pt x 278.03876pt>
+File: Codice/TestHall2.PNG Graphic file (type png)
+<use Codice/TestHall2.PNG>
+Package pdftex.def Info: Codice/TestHall2.PNG  used on input line 462.
+(pdftex.def)             Requested size: 398.33858pt x 98.07867pt.
+
+Overfull \hbox (53.33858pt too wide) in paragraph at lines 462--463
+ [][] 
+ []
+
+[27 <./Codice/TestHall1.png> <./Codice/testHall2.png>]
+<Codice/TestOrder.PNG, id=167, 890.32625pt x 761.84625pt>
+File: Codice/TestOrder.PNG Graphic file (type png)
+<use Codice/TestOrder.PNG>
+Package pdftex.def Info: Codice/TestOrder.PNG  used on input line 474.
+(pdftex.def)             Requested size: 284.52756pt x 243.47028pt.
+ [28 <./Codice/TestOrder.png>]
+<Immagini/SequenceDiagram.PNG, id=172, 1229.59375pt x 850.17625pt>
+File: Immagini/SequenceDiagram.PNG Graphic file (type png)
+<use Immagini/SequenceDiagram.PNG>
+Package pdftex.def Info: Immagini/SequenceDiagram.PNG  used on input line 485.
+(pdftex.def)             Requested size: 426.79134pt x 295.10135pt.
+
+Overfull \hbox (81.79134pt too wide) in paragraph at lines 485--486
+ [][] 
+ []
+
+[29 <./Immagini/SequenceDiagram.png>] (./Relazione RestaurantApp.aux) ) 
+Here is how much of TeX's memory you used:
+ 1489 strings out of 483140
+ 24975 string characters out of 5965151
+ 250792 words of memory out of 5000000
+ 16499 multiletter control sequences out of 15000+600000
+ 537274 words of font info for 40 fonts, out of 8000000 for 9000
+ 36 hyphenation exceptions out of 8191
+ 30i,6n,25p,1294b,220s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/
+francesco/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmti10.pfb>
+Output written on "Relazione RestaurantApp.pdf" (29 pages, 2651186 bytes).
+PDF statistics:
+ 205 PDF objects out of 1000 (max. 8388607)
+ 91 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 186 words of extra memory for PDF output out of 10000 (max. 10000000)
+

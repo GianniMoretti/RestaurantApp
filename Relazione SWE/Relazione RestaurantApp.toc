@@ -1,0 +1,37 @@
+\contentsline {section}{\numberline {1}Motivazione e Descrizione}{3}%
+\contentsline {subsection}{\numberline {1.1}Possibili aggiunte}{4}%
+\contentsline {subsubsection}{\numberline {1.1.1}Ordini a domicilio o da asporto}{4}%
+\contentsline {subsubsection}{\numberline {1.1.2}Prenotazioni dei tavoli}{4}%
+\contentsline {subsubsection}{\numberline {1.1.3}Login dei vari dipendenti}{4}%
+\contentsline {section}{\numberline {2}Requisiti}{5}%
+\contentsline {subsection}{\numberline {2.1}Use Case}{5}%
+\contentsline {subsection}{\numberline {2.2}Use Case Template}{6}%
+\contentsline {subsection}{\numberline {2.3}Mockups}{7}%
+\contentsline {section}{\numberline {3}Progettazione e Implementazione}{9}%
+\contentsline {subsection}{\numberline {3.1}Scelte implementative e considerazioni}{9}%
+\contentsline {subsection}{\numberline {3.2}Class Diagram}{10}%
+\contentsline {subsection}{\numberline {3.3}Classi ed Interfacce}{11}%
+\contentsline {subsubsection}{\numberline {3.3.1}WaiterPageController}{11}%
+\contentsline {subsubsection}{\numberline {3.3.2}HallOraganizatorPageController}{11}%
+\contentsline {subsubsection}{\numberline {3.3.3}CashierPageController}{12}%
+\contentsline {subsubsection}{\numberline {3.3.4}RestaurantManagerPageController}{13}%
+\contentsline {subsubsection}{\numberline {3.3.5}OrderPageController, BarController, KitchenController e PizzeriaController}{14}%
+\contentsline {subsubsection}{\numberline {3.3.6}PhisicalTable e ComposedTable}{15}%
+\contentsline {subsubsection}{\numberline {3.3.7}TableContainer}{16}%
+\contentsline {subsubsection}{\numberline {3.3.8}TableService}{17}%
+\contentsline {subsubsection}{\numberline {3.3.9}TableServiceContainer}{17}%
+\contentsline {subsubsection}{\numberline {3.3.10}OrderRecord}{18}%
+\contentsline {subsubsection}{\numberline {3.3.11}OrderManager}{18}%
+\contentsline {subsubsection}{\numberline {3.3.12}RepositoryMenu e FakeMenuData}{19}%
+\contentsline {subsection}{\numberline {3.4}Design Patterns}{21}%
+\contentsline {subsubsection}{\numberline {3.4.1}Observer}{21}%
+\contentsline {subsubsection}{\numberline {3.4.2}Singleton}{22}%
+\contentsline {subsubsection}{\numberline {3.4.3}MVC}{22}%
+\contentsline {subsection}{\numberline {3.5}Disposizione delle classi nei package}{24}%
+\contentsline {section}{\numberline {4}UnitTest}{25}%
+\contentsline {subsection}{\numberline {4.1}WaiterPageControllerTest}{25}%
+\contentsline {subsection}{\numberline {4.2}RestaurantManagerPageControllerTest}{26}%
+\contentsline {subsection}{\numberline {4.3}CashierPageControllerTest}{26}%
+\contentsline {subsection}{\numberline {4.4}HallOrganizatorPageController}{27}%
+\contentsline {subsection}{\numberline {4.5}OrderPageControllerTest}{28}%
+\contentsline {section}{\numberline {5}Sequence Diagram}{29}%
