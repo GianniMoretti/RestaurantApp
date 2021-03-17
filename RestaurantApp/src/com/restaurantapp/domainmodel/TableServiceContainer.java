@@ -34,7 +34,7 @@ public class TableServiceContainer {
 			TableService ts = getTableService(id);
 			ts.addOrder(order);
 			if(!order.isWriteOff())
-				OrderManager.getInstance().addOrder(ts.getOrders().get(ts.getOrders().size()-1));
+				OrderManager.getInstance().addOrder(order);
 			return true;
 		} catch (IndexOutOfBoundsException e) {
 			return false;

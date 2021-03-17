@@ -65,7 +65,7 @@ class HallOrganizatorPageControllerTest {
 		TableContainer.getInstance().addTable(ct);
 
 		assertTrue(HOPC.setComposedTableAvailable(45),"set composed table available");
-		assertEquals(TableState.AVAILABLE, ct.getTableState(),"check the effectice state of composed table");
+		assertEquals(TableState.AVAILABLE, ct.getTableState(),"check the effective state of composed table");
 		assertFalse(HOPC.setComposedTableAvailable(50),"set unexistent composed table available");
 	}
 	

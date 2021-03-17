@@ -56,7 +56,7 @@ class WaiterPageControllerTest {
     }
 	
 	@Test
-	@DisplayName("Ensures that table service opening takes place correctly")
+	@DisplayName("Ensure that table service opening takes place correctly")
 	void testOpenTableService() {		
 		assertTrue(WPC.openTableService(40, new TableServiceRecord("Francesco", "7013028")), "Table service created");
 		assertFalse(WPC.openTableService(40, new TableServiceRecord("Francesco", "7165028")) ,"Table not available");

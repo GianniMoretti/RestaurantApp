@@ -2,13 +2,15 @@ package com.restaurantapp.domainmodel;
 
 import java.util.ArrayList;
 
+/**
+ * WriteOff viene messo a false se ordine mandato in cucina e 
+ * contato positivamente nel conto, è messo invece a true se
+ * non viene mandato in cucina (comunicazione orale) e contato
+ * negativamente nel conto.
+ */
+
 public class Order {
-	/*
-	 * WriteOff viene messo a false se
-	 * ordine mandato in cucina e contato positivamente nel conto, messo a true se
-	 * non viene mandato in cucina (comunicazione orale) e contato negativamente nel
-	 * conto
-	 */
+
 	private static int count = 0;
 	private int orderID;
 	private boolean writeOff = false;

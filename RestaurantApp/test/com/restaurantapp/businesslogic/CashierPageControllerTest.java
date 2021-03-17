@@ -27,11 +27,10 @@ import com.restaurantapp.domainmodel.TableServiceRecord;
 import com.restaurantapp.domainmodel.TableState;
 import com.restaurantapp.domainmodel.Waiter;
 
-class CashierPagecontrollerTest {
+class CashierPageControllerTest {
 
 	private static CashierPageController CPC;
 	private static RepositoryTableRecord repository;
-	private static ArrayList<TableServiceRecord> records;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -138,10 +137,6 @@ class CashierPagecontrollerTest {
 	@Test
 	@DisplayName("getBill should return the exact price")
 	void testGetBill() {
-		records = new ArrayList<>();
-		records.add(new TableServiceRecord("Francesco", "123456789"));
-		records.add(new TableServiceRecord("Gianni", "987654321"));
-		
 		assertEquals(44, CPC.getBill(40), "Bill with added and removed ingredients");
 		assertEquals(25.5, CPC.getBill(60), "Bill with write off");
 		assertEquals(TableState.DIRTY, TableContainer.getInstance().getTable(40).getTableState(), "Assert first DIRTY");

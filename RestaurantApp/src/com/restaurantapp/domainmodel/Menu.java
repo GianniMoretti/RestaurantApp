@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 import com.restaurantapp.datalayer.RepositoryMenu;
 
-/*
- * Creato dall'interfaccia del cameriere al momento del login
- * Pigiando pulsante che rappresenta piatto nel menu
- * ritorna il this del piatto per poterlo inserire nell'OrderRecord
+/**
+ * Creato dall'interfaccia del cameriere al momento del login.
+ * Premendo il pulsante che rappresenta un piatto nel menù
+ * ritorna il riferimento al piatto per poterlo inserire nell'OrderRecord.
  */
 
 public class Menu {

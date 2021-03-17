@@ -2,10 +2,9 @@ package com.restaurantapp.domainmodel;
 
 import java.util.ArrayList;
 
-/*
- * id settato come quello di Order, in questo modo la cucina 
- * puo' conoscere la precedenza delle comande
- *
+/**
+ * Attributo id settato come quello di Order, in questo modo la cucina 
+ * puo' conoscere la precedenza delle comande.
  */
 
 public class OrderRecord {
