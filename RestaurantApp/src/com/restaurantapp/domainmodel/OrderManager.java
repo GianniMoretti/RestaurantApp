@@ -2,6 +2,10 @@ package com.restaurantapp.domainmodel;
 import java.util.ArrayList;
 import java.util.Observable;
 
+/**
+ * Observer push mode
+ */
+
 public class OrderManager extends Observable {
 	
 	private ArrayList<Order> orders; 

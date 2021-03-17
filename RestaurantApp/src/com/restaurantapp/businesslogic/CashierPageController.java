@@ -1,10 +1,15 @@
 package com.restaurantapp.businesslogic;
 
 import com.restaurantapp.datalayer.RepositoryTableRecord;
+
 import com.restaurantapp.domainmodel.TableService;
 import com.restaurantapp.domainmodel.TableServiceContainer;
 import com.restaurantapp.domainmodel.TableServiceRecord;
 import com.restaurantapp.domainmodel.TableState;
+
+/**
+ * Il login attraverso interfaccia chiama il costruttore.
+ */
 
 public class CashierPageController {
 	private RepositoryTableRecord repository;

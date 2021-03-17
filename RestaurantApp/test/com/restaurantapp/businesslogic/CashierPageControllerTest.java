@@ -61,6 +61,8 @@ class CashierPageControllerTest {
 
 		Menu menu = new Menu(new FakeMenuData());
 		
+		// Coperti ts1
+		
 		Order service1= new Order();
 		for(int i=0; i<4 ; i++) {
 			OrderRecord or0= new OrderRecord(menu.getDishes().get(8));
@@ -69,6 +71,8 @@ class CashierPageControllerTest {
 		
 		ts1.addOrder(service1);
 		
+		// coperti ts2
+		
 		Order service2= new Order();
 		for(int i=0; i<3 ; i++) {
 			OrderRecord or0= new OrderRecord(menu.getDishes().get(8));
@@ -76,6 +80,8 @@ class CashierPageControllerTest {
 		}
 		
 		ts2.addOrder(service2);
+		
+		// Primo ordine
 
 		Order o1 = new Order();
 		
@@ -98,11 +104,16 @@ class CashierPageControllerTest {
 		
 		ts1.addOrder(o1);
 		
+		// secondo ordine
+		
 		Order o2 = new Order();
 		OrderRecord or9 = new OrderRecord(menu.getDishes().get(0));
 		or9.removeIngredient(menu.getIngredients().get(5));
 		o2.addOrderRecord(or9);
+		
 		ts1.addOrder(o2);
+		
+		// terzo ordine
 		
 		Order o3 = new Order();
 		
@@ -124,6 +135,8 @@ class CashierPageControllerTest {
 		o3.addOrderRecord(or8);
 
 		ts2.addOrder(o3);
+		
+		// quarto ordine - Writeoff
 		
 		Order o4 = new Order(true);
 		o4.addOrderRecord(new OrderRecord(menu.getDishes().get(3)));

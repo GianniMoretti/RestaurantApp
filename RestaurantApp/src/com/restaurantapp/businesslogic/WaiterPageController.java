@@ -10,9 +10,8 @@ import com.restaurantapp.domainmodel.TableServiceRecord;
 import com.restaurantapp.domainmodel.TableState;
 import com.restaurantapp.domainmodel.Waiter;
 
-/*
- * login attraverso l'interfaccia prende l'ID e chiama il costruttore del WaiterPageController,
- * interagisce direttamente con il TableServiceContainer per agire sui TableService
+/**
+ * Il login attraverso l'interfaccia prende l'ID e chiama il costruttore del WaiterPageController.
  */
 
 public class WaiterPageController {

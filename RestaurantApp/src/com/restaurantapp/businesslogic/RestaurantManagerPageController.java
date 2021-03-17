@@ -9,7 +9,9 @@ import com.restaurantapp.domainmodel.Dish;
 import com.restaurantapp.domainmodel.Ingredient;
 import com.restaurantapp.domainmodel.TableServiceRecord;
 
-// login attraverso l'interfaccia prende l'ID e chiama il costruttore del RestaurantManagerPageController
+/**
+ *  Il login attraverso l'interfaccia prende l'ID e chiama il costruttore del RestaurantManagerPageController.
+ */
 
 public class RestaurantManagerPageController {
 	private String id;

@@ -8,7 +8,9 @@ import com.restaurantapp.domainmodel.OrderRecord;
 import java.util.ArrayList;
 import java.util.Observable;
 
-// metodo detach al logout o alla chiusura dell'applicativo
+/**
+ * Il metodo detach chiamato al logout o alla chiusura dell'applicativo.
+ */
 
 public abstract class OrderPageController implements Observer{
 

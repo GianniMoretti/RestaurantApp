@@ -7,7 +7,7 @@ public class TableServiceRecord {
 	private String phoneNumber;
 	private LocalDate date;
 
-	public TableServiceRecord(String nominative, String phoneNumber) {
+	public TableServiceRecord(String nominative, String phoneNumber) { 
 		this.nominative = nominative;
 		this.phoneNumber = phoneNumber;
 		this.date = LocalDate.now();

@@ -7,12 +7,10 @@ import com.restaurantapp.domainmodel.PhisicalTable;
 import com.restaurantapp.domainmodel.TableContainer;
 import com.restaurantapp.domainmodel.TableState;
 
-/*
- * Login attraverso interfaccia che chiama il costruttore.
- * Metodo per settare i tavoli non utilizzabili a inizio serata, 
- * per distruggere un composed table o per renderlo disponibile senza distruggerlo.
- * (Non ci sono controlli sullo stato del composed table prima di distruggerlo).
+/**
+ * Il login attraverso interfaccia chiama il costruttore.
  */
+
 public class HallOrganizatorPageController {
 
 	private ArrayList<PhisicalTable> tables;

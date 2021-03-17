@@ -1,12 +1,6 @@
 package com.restaurantapp.domainmodel;
 import java.util.ArrayList;
 
-/**
- * Il Cameriere prende un riferimento ad un composed table.
- * Il Cassiere mette i tavoli in stato DA PULIRE, ma non li distrugge.
- * L'Organizzatore della Sala gestisce la creazione e la distruzione dei tavoli.
- */
-
 public class TableContainer {
 
 	private static TableContainer instance=null;

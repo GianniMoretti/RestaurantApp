@@ -43,10 +43,9 @@ class RestaurantManagerPageControllerTest {
 	@Test
 	@DisplayName("Delete Table Service should work")
 	void testDeleteTableServiceRecords() {
-		ArrayList<TableServiceRecord> tmp = new ArrayList<>();
-		assertFalse(tmp.equals(RMPC.getTableServiceRecords(LocalDate.now())), "check if the record list is not empty");
+		assertFalse(RMPC.getTableServiceRecords(LocalDate.now()).isEmpty(), "check if the record list is not empty");
 		assertTrue(RMPC.deleteTableServiceRecords(LocalDate.now()), "delete records");
-		assertTrue(tmp.equals(RMPC.getTableServiceRecords(LocalDate.now())), "check if the record list is empty");
+		assertTrue(RMPC.getTableServiceRecords(LocalDate.now()).isEmpty(), "check if the record list is empty");
 		assertFalse(RMPC.deleteTableServiceRecords(LocalDate.now()), "no data to delete");
 	}
 	
