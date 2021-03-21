@@ -1,4 +1,4 @@
-![image]("https://github.com/GianniMoretti/RestaurantApp/blob/main/Relazione%20SWE/Immagini/LogoUnifi.png)
+![image]("https://github.com/GianniMoretti/RestaurantApp/blob/main/Relazione SWE/Immagini/LogoUnifi.png)
 
 **UNIVERSITA’ DEGLI STUDI DI FIRENZE\
 Facolta di Ingegneria\
