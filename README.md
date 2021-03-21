@@ -1,4 +1,4 @@
-![image]("Immagini/LogoUnifi.PNG")
+![image]("RelazioneSWE/LogoUnifi.PNG")
 
 **UNIVERSITA’ DEGLI STUDI DI FIRENZE\
 Facolta di Ingegneria\
