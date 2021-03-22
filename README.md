@@ -1,4 +1,4 @@
-![image]("https://github.com/GianniMoretti/RestaurantApp/blob/main/Relazione SWE/Immagini/LogoUnifi.png)
+![image]("https://github.com/GianniMoretti/RestaurantApp/blob/main/Relazione SWE/Immagini/LogoUnifi.png")
 
 **UNIVERSITA’ DEGLI STUDI DI FIRENZE\
 Facolta di Ingegneria\
@@ -175,7 +175,7 @@ Class Diagram
 Qui di seguito riportiamo la realizzazione del Class Diagram che
 descrive la nostra logica di dominio in prospettiva di implementazione:
 
-![Class Diagram]("Immagini/ClassDiagram.PNG" "fig:") [ClassDiagram]
+![Class Diagram]("https://github.com/GianniMoretti/RestaurantApp/blob/main/Relazione%20SWE/Immagini/ClassDiagram.png" "fig:") [ClassDiagram]
 
 Classi ed Interfacce
 --------------------
