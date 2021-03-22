@@ -364,19 +364,6 @@ FakeMenuData](Relazione%20SWE/Codice/FakeMenuData2.png)
 Design Patterns
 ---------------
 
-Nella realizzazione del nostro progetto abbiamo ritenuto opportuno
-introdurre alcuni design patterns noti, indispensabili alla gestione di
-criticità emerse durante il lavoro. I patterns utilizzati nel nostro
-applicativo sono:\
-\
-\
-Nella realizzazione del nostro progetto ci siamo imbattuti in delle
-situazioni dove è emersa la necessità di introdurre dei design patterns
-noti al fine di gestirle in modo agile ed elegante. I patterns
-utilizzati nel nostro applicativo sono:\
-\
-\
-
 All’interno del progetto abbiamo avuto la necessità di introdurre alcuni
 design patterns noti per favorire la gestione di alcune dipendenze tra
 classi in modo agile ed elegante. I patterns utilizzati sono:
