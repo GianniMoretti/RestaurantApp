@@ -516,7 +516,7 @@ logica dell’applicativo.
 sala](Relazione%20SWE/Codice/TestHall1.png)
 
 ![Porzione di codice del test case dell’organizzatore della
-sala](Relazione%20SWE/Codice/TestHall2.png)
+sala](Relazione%20SWE/Codice/testHall2.png)
 
 OrderPageControllerTest
 -----------------------
