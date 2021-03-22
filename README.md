@@ -107,7 +107,7 @@ attori in gioco con le varie figure professionali del ristorante e i
 rispettivi casi d’uso con le rispettive mansioni. Di seguito viene
 riportato l’Use Case Diagram risultante:
 
-![Use Case Diagram](Relazione%20SWE/Immagini/UseCaseDiagram.PNG)
+![Use Case Diagram](Relazione%20SWE/Immagini/UseCaseDiagram.png)
 
 Use Case Template
 -----------------
@@ -116,13 +116,13 @@ Riportiamo di seguito i template relativi ad alcuni dei pricipali casi
 d’uso individuati nel nostro progetto:
 
 ![Template che descrive il caso d’uso del cameriere per piazzare un
-ordine ad un servizio al tavolo](Relazione%20SWE/Immagini/PlaceOrder.PNG)
+ordine ad un servizio al tavolo](Relazione%20SWE/Immagini/PlaceOrder.png)
 
 ![Template che descrive il caso d’uso dell’organizzatore della sala per
-creare un tavolo composto](Relazione%20SWE/Immagini/CreateComposedTable.PNG)
+creare un tavolo composto](Relazione%20SWE/Immagini/CreateComposedTable.png)
 
 ![Template che descrive il caso d’uso del cassiere per calcolare il
-conto di un servizio al tavolo](Relazione%20SWE/Immagini/GetBill.PNG)
+conto di un servizio al tavolo](Relazione%20SWE/Immagini/GetBill.png)
 
 Mockups
 -------
@@ -131,16 +131,16 @@ Riportiamo di seguito dei possibili mockups relativi alle interfaccie
 grafiche della nostra app per l’interazione con i nostri attori.
 
 ![Mockup raffigurante un prototipo della home page
-dell’app](Immagini/HomePage.PNG)
+dell’app](/Mock-ups/HomePage.PNG)
 
 ![Mockup raffigurante un prototipo della pagina di login del
-cameriere](Immagini/WaiterLogin.PNG)
+cameriere](/Mock-ups/WaiterLogin.PNG)
 
 ![Mockup raffigurante un prototipo dell’interfaccia dell’organizzatore
-della sala](Immagini/HallOrganizatorPage.PNG)
+della sala](/Mock-ups/HallOrganizatorPage.PNG)
 
 ![Mockup raffigurante un prototipo dell’interfaccia del cameriere al
-momento della creazione di un ordine](Relazione%20SWE/Immagini/OrdineCameriere.PNG)
+momento della creazione di un ordine](/Mock-ups/OrdineCameriere.PNG)
 
 Progettazione e Implementazione
 ===============================
@@ -194,7 +194,7 @@ relativi ad un determinato tavolo utilizzando il metodo
 metodo *openTableService()* indicando il tavolo interessato.
 
 ![Porzione di codice della classe
-WaiterPageController](Relazione%20SWE/Codice/WaiterPageController.PNG)
+WaiterPageController](Relazione%20SWE/Codice/WaiterPageController.png)
 
 ### HallOraganizatorPageController
 
@@ -208,10 +208,10 @@ invece di impostare lo stato dei tavoli, specificati con id, nello stato
 “Unusable”.
 
 ![Porzione di codice della classe
-HallOrganizatorPageController](Relazione%20SWE/Codice/HallPage1.PNG)
+HallOrganizatorPageController](Relazione%20SWE/Codice/HallPage1.png)
 
 ![Porzione di codice della classe
-HallOrganizatorPageController](Relazione%20SWE/Codice/HallPage2.PNG)
+HallOrganizatorPageController](Relazione%20SWE/Codice/HallPage2.png)
 
 ### CashierPageController
 
@@ -220,7 +220,7 @@ calcolare il conto relativo ad un servizio al tavolo utilizzando
 *getBill()*.
 
 ![Porzione di codice della classe
-CashierPageController](Relazione%20SWE/Codice/CassierePage.PNG)
+CashierPageController](Relazione%20SWE/Codice/CassierePage.png)
 
 ### RestaurantManagerPageController
 
@@ -233,7 +233,7 @@ relativi ad una data con *deleteTableServiceRecords()* o di visionarli
 con *getTableServiceRecords()*.
 
 ![Porzione di codice della classe
-RestaurantManagerPageController](Relazione%20SWE/Codice/ManagerPage.PNG)
+RestaurantManagerPageController](Relazione%20SWE/Codice/ManagerPage.png)
 
 ### OrderPageController, BarController, KitchenController e PizzeriaController
 
@@ -250,10 +250,10 @@ automaticamente la lista dei suoi “OrderRecord” (Vedi Sezione Observer
 [Observer]).
 
 ![Porzione di codice della classe
-OrderPageController](Relazione%20SWE/Codice/OrderPage.PNG)
+OrderPageController](Relazione%20SWE/Codice/OrderPage.png)
 
 ![Porzione di codice della classe
-PizzeriaController](Relazione%20SWE/Codice/PizzeriaPage.PNG)
+PizzeriaController](Relazione%20SWE/Codice/PizzeriaPage.png)
 
 Di seguito riportiamo la descrizione di alcune delle classi principali
 appartenenti alla parte di Domain Model del nostro progetto:
@@ -265,7 +265,7 @@ locale, vengono identificati tramite un id e *setAvailable()* permette
 di renderli utilizzabili o non utilizzabili.
 
 ![Porzione di codice della classe
-PhisicalTable](Relazione%20SWE/Codice/PhisicalTable.PNG)
+PhisicalTable](Relazione%20SWE/Codice/PhisicalTable.png)
 
 “ComposedTable” è un tavolo composto da un insieme di “PhisicalTable” e
 viene identificato, anche lui, con un id. Il metodo *addTable()*
@@ -273,7 +273,7 @@ permette di aggiungere un “PhisicalTable” al suo interno. Inoltre, è
 possibile assegnargli un “TableState” per contrassegnare lo stato in cui
 si trova.
 
-![Porzione di codice della classe Composed](Relazione%20SWE/Codice/ComposedTable.PNG)
+![Porzione di codice della classe Composed](Relazione%20SWE/Codice/ComposedTable.png)
 
 ### TableContainer
 
@@ -283,10 +283,10 @@ lo stato ai tavoli composti con i metodi *addTable()*, *deleteTable(int
 id)* e *setComposedTableAvailable()*.
 
 ![Porzione di codice della classe
-TableContainer](Relazione%20SWE/Codice/TableContainer1.PNG)
+TableContainer](Relazione%20SWE/Codice/TableContainer1.png)
 
 ![Porzione di codice della classe
-TableContainer](Relazione%20SWE/Codice/TableContainer2.PNG)
+TableContainer](Relazione%20SWE/Codice/TableContainer2.png)
 
 ### TableService
 
@@ -297,7 +297,7 @@ infatti: lista degli ordini piazzati, “TableServiceRecord”, il
 effettuando il servizio.
 
 ![Porzione di codice della classe
-TableService](Relazione%20SWE/Codice/TableService.PNG)
+TableService](Relazione%20SWE/Codice/TableService.png)
 
 ### TableServiceContainer
 
@@ -308,7 +308,7 @@ come, ad esempio, *addTableService()* per aggiungere un TableService o
 del tavolo id.
 
 ![Porzione di codice della classe
-TableServiceContainer](Relazione%20SWE/Codice/TableServiceContainer.PNG)
+TableServiceContainer](Relazione%20SWE/Codice/TableServiceContainer.png)
 
 ### OrderRecord
 
@@ -323,7 +323,7 @@ corrispondente sommando e sottraendo il prezzo degli ingredienti
 rispettivamente aggiunti e rimossi. Ogni “OrderRecord” è identificato da
 un id, lo stesso dell’ “Order” che lo contiene.
 
-![Porzione di codice della classe OrderRecord](Relazione%20SWE/Codice/OrderRecord.PNG)
+![Porzione di codice della classe OrderRecord](Relazione%20SWE/Codice/OrderRecord.png)
 
 ### OrderManager
 
@@ -336,7 +336,7 @@ package java.util, così che ogni qualvolta venga aggiunto un nuovo
 Sezione Observer [Observer]).
 
 ![Porzione di codice della classe
-OrderManager](Relazione%20SWE/Codice/OrderManager.PNG)
+OrderManager](Relazione%20SWE/Codice/OrderManager.png)
 
 ### RepositoryMenu e FakeMenuData
 
@@ -349,17 +349,17 @@ oggetti per lo storage di dati senza dover cambiare il codice che
 utilizza il menù, introducendo così un ulteriore livello di astrazione.
 
 ![Porzione di codice della classe
-RepositoryMenu](Relazione%20SWE/Codice/RepositoryMenu.PNG)
+RepositoryMenu](Relazione%20SWE/Codice/RepositoryMenu.png)
 
 “FakeMenuData” implementa “RepositoryMenu” ed è stato creato per avere
 un oggetto di storage fittizzio che ci permettesse di eseguire i test
 senza dover implementare sul momento piatti e ingredienti.
 
 ![Porzione di codice della classe
-FakeMenuData](Relazione%20SWE/Codice/FakeMenuData1.PNG)
+FakeMenuData](Relazione%20SWE/Codice/FakeMenuData1.png)
 
 ![Porzione di codice della classe
-FakeMenuData](Relazione%20SWE/Codice/FakeMenuData2.PNG)
+FakeMenuData](Relazione%20SWE/Codice/FakeMenuData2.png)
 
 Design Patterns
 ---------------
@@ -457,13 +457,13 @@ Riportiamo quindi di seguito l’architettura del nostro applicativo
 suddivisa nelle tre componenti sopra descritte:
 
 ![Raffigurazione dell’architettura dell’applicativo secondo lo schema
-Model-View-Controller](Relazione%20SWE/Immagini/Architecture.PNG)
+Model-View-Controller](Relazione%20SWE/Immagini/Architecture.png)
 
 Disposizione delle classi nei package
 -------------------------------------
 
 ![Raffigurazione della disposizione delle classi del progetto nei
-package](Relazione%20SWE/Immagini/Package.PNG)
+package](Relazione%20SWE/Immagini/Package.png)
 
 UnitTest
 ========
@@ -484,7 +484,7 @@ test, è stato il fatto questi metodi sono tra i più essenziali tra
 quelli che stanno dietro la logica dell’applicativo.
 
 ![Porzione di codice del test case del
-cameriere](Relazione%20SWE/Codice/TestCameriere.PNG)
+cameriere](Relazione%20SWE/Codice/TestCameriere.png)
 
 RestaurantManagerPageControllerTest
 -----------------------------------
@@ -497,7 +497,7 @@ principali: la prima è che non è presente un database sottostante
 implementato, la seconda è che sono analoghi ai precedenti.
 
 ![Porzione di codice del test case del manager del
-ristorante](Relazione%20SWE/Codice/TestManager.PNG)
+ristorante](Relazione%20SWE/Codice/TestManager.png)
 
 CashierPageControllerTest
 -------------------------
@@ -511,7 +511,7 @@ Quello che il cassiere deve controllare è che vengano calcolati i conti
 in modo corretto e che lo stato dei tavoli venga messo a “DA PULIRE”.
 
 ![Porzione di codice del test case del
-cassiere](Relazione%20SWE/Codice/TestCashier.PNG)
+cassiere](Relazione%20SWE/Codice/TestCashier.png)
 
 HallOrganizatorPageController
 -----------------------------
@@ -526,10 +526,10 @@ questi metodi sono tra i più essenziali tra quelli che stanno dietro la
 logica dell’applicativo.
 
 ![Porzione di codice del test case dell’organizzatore della
-sala](Relazione%20SWE/Codice/TestHall1.PNG)
+sala](Relazione%20SWE/Codice/TestHall1.png)
 
 ![Porzione di codice del test case dell’organizzatore della
-sala](Relazione%20SWE/Codice/TestHall2.PNG)
+sala](Relazione%20SWE/Codice/TestHall2.png)
 
 OrderPageControllerTest
 -----------------------
@@ -542,7 +542,7 @@ pizzeria e del ristorante siano stati aggiornati correttamente.
 Successivamente viene piazzato un ulteriore ordine per controllare che i
 controller vengano aggiornati nel modo giusto.
 
-![Porzione di codice del test case della cucina](Relazione%20SWE/Codice/TestOrder.PNG)
+![Porzione di codice del test case della cucina](Relazione%20SWE/Codice/TestOrder.png)
 
 Sequence Diagram
 ================
@@ -552,4 +552,4 @@ attori:
 
 ![Sequence Diagram che documenta il flusso del controllo nel momento in
 cui il cameriere piazza un nuovo ordine a un
-tavolo](Relazione%20SWE/Immagini/SequenceDiagram.PNG)
+tavolo](Relazione%20SWE/Immagini/SequenceDiagram.png)
